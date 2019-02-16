@@ -1,0 +1,18 @@
+#Log
+github "DaveWoodCom/XCGLogger"
+
+#Networking
+github "Alamofire/Alamofire"
+
+#Reactive
+github "ReactiveX/RxSwift"
+
+#JSON
+github "SwiftyJSON/SwiftyJSON"
+
+#DB
+github "realm/realm-cocoa"
+
+#Helper
+github "radex/SwiftyUserDefaults"
+github "AliSoftware/Reusable"

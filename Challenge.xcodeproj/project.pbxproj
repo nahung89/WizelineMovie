@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		11153A8622187CAE0064F116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11153A8522187CAE0064F116 /* AppDelegate.swift */; };
-		11153A8822187CAE0064F116 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11153A8722187CAE0064F116 /* ViewController.swift */; };
-		11153A8B22187CAE0064F116 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11153A8922187CAE0064F116 /* Main.storyboard */; };
-		11153A8D22187CB00064F116 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11153A8C22187CB00064F116 /* Assets.xcassets */; };
-		11153A9022187CB00064F116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11153A8E22187CB00064F116 /* LaunchScreen.storyboard */; };
 		11153A9B22187CB00064F116 /* ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11153A9A22187CB00064F116 /* ChallengeTests.swift */; };
 		11153AA622187CB00064F116 /* ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11153AA522187CB00064F116 /* ChallengeUITests.swift */; };
+		11153AC8221880230064F116 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11153AC0221880230064F116 /* Assets.xcassets */; };
+		11153ACA221880230064F116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11153AC4221880230064F116 /* LaunchScreen.storyboard */; };
+		11153ACB221880230064F116 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11153AC5221880230064F116 /* Main.storyboard */; };
+		11153ACC221880230064F116 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11153AC7221880230064F116 /* ViewController.swift */; };
+		11153AE2221884900064F116 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153ADB2218848F0064F116 /* RxSwift.framework */; };
+		11153AE3221884900064F116 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153ADC221884900064F116 /* SwiftyJSON.framework */; };
+		11153AE4221884900064F116 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153ADD221884900064F116 /* Alamofire.framework */; };
+		11153AE5221884900064F116 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153ADE221884900064F116 /* XCGLogger.framework */; };
+		11153AE6221884900064F116 /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153ADF221884900064F116 /* ObjcExceptionBridging.framework */; };
+		11153AE7221884900064F116 /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153AE0221884900064F116 /* SwiftyUserDefaults.framework */; };
+		11153AE8221884900064F116 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153AE1221884900064F116 /* RxCocoa.framework */; };
+		11153AEA2218852B0064F116 /* Reusable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153AE92218852B0064F116 /* Reusable.framework */; };
+		11488CBA22188AC900D07D69 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11488CB822188AC900D07D69 /* Localizable.strings */; };
+		11488CBD22188C1600D07D69 /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488CBC22188C1600D07D69 /* assets-images.swift */; };
+		11488CBF22188C2300D07D69 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488CBE22188C2300D07D69 /* strings.swift */; };
+		11488CC122188C2A00D07D69 /* storyboards-scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488CC022188C2A00D07D69 /* storyboards-scenes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,17 +48,30 @@
 /* Begin PBXFileReference section */
 		11153A8222187CAE0064F116 /* Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11153A8522187CAE0064F116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		11153A8722187CAE0064F116 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		11153A8A22187CAE0064F116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		11153A8C22187CB00064F116 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		11153A8F22187CB00064F116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		11153A9122187CB00064F116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11153A9622187CB00064F116 /* ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11153A9A22187CB00064F116 /* ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTests.swift; sourceTree = "<group>"; };
 		11153A9C22187CB00064F116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11153AA122187CB00064F116 /* ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11153AA522187CB00064F116 /* ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeUITests.swift; sourceTree = "<group>"; };
 		11153AA722187CB00064F116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11153AC0221880230064F116 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11153AC2221880230064F116 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11153AC4221880230064F116 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		11153AC5221880230064F116 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		11153AC7221880230064F116 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11153ADB2218848F0064F116 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		11153ADC221884900064F116 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		11153ADD221884900064F116 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		11153ADE221884900064F116 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
+		11153ADF221884900064F116 /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
+		11153AE0221884900064F116 /* SwiftyUserDefaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUserDefaults.framework; path = Carthage/Build/iOS/SwiftyUserDefaults.framework; sourceTree = "<group>"; };
+		11153AE1221884900064F116 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		11153AE92218852B0064F116 /* Reusable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reusable.framework; path = Carthage/Build/iOS/Reusable.framework; sourceTree = "<group>"; };
+		11488CB922188AC900D07D69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		11488CBB22188ACF00D07D69 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		11488CBC22188C1600D07D69 /* assets-images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "assets-images.swift"; path = "Challenge/Generated/assets-images.swift"; sourceTree = SOURCE_ROOT; };
+		11488CBE22188C2300D07D69 /* strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = strings.swift; path = Challenge/Generated/strings.swift; sourceTree = SOURCE_ROOT; };
+		11488CC022188C2A00D07D69 /* storyboards-scenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "storyboards-scenes.swift"; path = "Challenge/Generated/storyboards-scenes.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +79,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11153AEA2218852B0064F116 /* Reusable.framework in Frameworks */,
+				11153AE2221884900064F116 /* RxSwift.framework in Frameworks */,
+				11153AE3221884900064F116 /* SwiftyJSON.framework in Frameworks */,
+				11153AE4221884900064F116 /* Alamofire.framework in Frameworks */,
+				11153AE5221884900064F116 /* XCGLogger.framework in Frameworks */,
+				11153AE6221884900064F116 /* ObjcExceptionBridging.framework in Frameworks */,
+				11153AE7221884900064F116 /* SwiftyUserDefaults.framework in Frameworks */,
+				11153AE8221884900064F116 /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +114,7 @@
 				11153A9922187CB00064F116 /* ChallengeTests */,
 				11153AA422187CB00064F116 /* ChallengeUITests */,
 				11153A8322187CAE0064F116 /* Products */,
+				11153ADA2218848F0064F116 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,11 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				11153A8522187CAE0064F116 /* AppDelegate.swift */,
-				11153A8722187CAE0064F116 /* ViewController.swift */,
-				11153A8922187CAE0064F116 /* Main.storyboard */,
-				11153A8C22187CB00064F116 /* Assets.xcassets */,
-				11153A8E22187CB00064F116 /* LaunchScreen.storyboard */,
-				11153A9122187CB00064F116 /* Info.plist */,
+				11153AC6221880230064F116 /* Controllers */,
+				11153AC3221880230064F116 /* Storyboards */,
+				11153ABF221880230064F116 /* Resources */,
+				11153AC1221880230064F116 /* Supporting Files */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -125,6 +158,74 @@
 			path = ChallengeUITests;
 			sourceTree = "<group>";
 		};
+		11153ABF221880230064F116 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				11488CB52218860F00D07D69 /* Localize */,
+				11488CB2221885F100D07D69 /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		11153AC1221880230064F116 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				11153AC2221880230064F116 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11153AC3221880230064F116 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				11488CC022188C2A00D07D69 /* storyboards-scenes.swift */,
+				11153AC4221880230064F116 /* LaunchScreen.storyboard */,
+				11153AC5221880230064F116 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		11153AC6221880230064F116 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11153AC7221880230064F116 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		11153ADA2218848F0064F116 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11153AE92218852B0064F116 /* Reusable.framework */,
+				11153ADD221884900064F116 /* Alamofire.framework */,
+				11153ADF221884900064F116 /* ObjcExceptionBridging.framework */,
+				11153AE1221884900064F116 /* RxCocoa.framework */,
+				11153ADB2218848F0064F116 /* RxSwift.framework */,
+				11153ADC221884900064F116 /* SwiftyJSON.framework */,
+				11153AE0221884900064F116 /* SwiftyUserDefaults.framework */,
+				11153ADE221884900064F116 /* XCGLogger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		11488CB2221885F100D07D69 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				11488CBC22188C1600D07D69 /* assets-images.swift */,
+				11153AC0221880230064F116 /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		11488CB52218860F00D07D69 /* Localize */ = {
+			isa = PBXGroup;
+			children = (
+				11488CBE22188C2300D07D69 /* strings.swift */,
+				11488CB822188AC900D07D69 /* Localizable.strings */,
+			);
+			name = Localize;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +233,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11153AAA22187CB00064F116 /* Build configuration list for PBXNativeTarget "Challenge" */;
 			buildPhases = (
+				11153AB322187D860064F116 /* Run Script - SwiftFormat */,
+				11153AB422187DAD0064F116 /* Run Script - SwiftGen */,
 				11153A7E22187CAE0064F116 /* Sources */,
 				11153A7F22187CAE0064F116 /* Frameworks */,
 				11153A8022187CAE0064F116 /* Resources */,
+				11153AB622187E030064F116 /* Run Script - Carthage */,
+				11153AB522187DD10064F116 /* Run Script - SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -209,8 +314,9 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				vi,
+				en,
 			);
 			mainGroup = 11153A7922187CAE0064F116;
 			productRefGroup = 11153A8322187CAE0064F116 /* Products */;
@@ -229,9 +335,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11153A9022187CB00064F116 /* LaunchScreen.storyboard in Resources */,
-				11153A8D22187CB00064F116 /* Assets.xcassets in Resources */,
-				11153A8B22187CAE0064F116 /* Main.storyboard in Resources */,
+				11153AC8221880230064F116 /* Assets.xcassets in Resources */,
+				11488CBA22188AC900D07D69 /* Localizable.strings in Resources */,
+				11153ACB221880230064F116 /* Main.storyboard in Resources */,
+				11153ACA221880230064F116 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,12 +358,106 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11153AB322187D860064F116 /* Run Script - SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - SwiftFormat";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#echo \"SwiftFormat is disabled.\"; exit 0\n\nif which swiftformat >/dev/null; then\nswiftformat \"${SRCROOT}/$PROJECT_NAME\" --config \"${SRCROOT}/.swiftformat\"\nswiftformat \"${SRCROOT}/ChallengeTests\" --config \"${SRCROOT}/.swiftformat\"\nswiftformat \"${SRCROOT}/ChallengeUITests\" --config \"${SRCROOT}/.swiftformat\"\nelse\necho \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+		11153AB422187DAD0064F116 /* Run Script - SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - SwiftGen";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftgen >/dev/null; then\nswiftgen config run\nelse\necho \"warning: SwiftGen not installed, download from https://github.com/SwiftGen/SwiftGen\"\nfi\n\n";
+		};
+		11153AB522187DD10064F116 /* Run Script - SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		11153AB622187E030064F116 /* Run Script - Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/XCGLogger.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjcExceptionBridging.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyUserDefaults.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Reusable.framework",
+			);
+			name = "Run Script - Carthage";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyJSON.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/XCGLogger.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ObjcExceptionBridging.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyUserDefaults.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Reusable.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		11153A7E22187CAE0064F116 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11153A8822187CAE0064F116 /* ViewController.swift in Sources */,
+				11488CBD22188C1600D07D69 /* assets-images.swift in Sources */,
+				11488CC122188C2A00D07D69 /* storyboards-scenes.swift in Sources */,
+				11488CBF22188C2300D07D69 /* strings.swift in Sources */,
+				11153ACC221880230064F116 /* ViewController.swift in Sources */,
 				11153A8622187CAE0064F116 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,20 +494,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		11153A8922187CAE0064F116 /* Main.storyboard */ = {
+		11488CB822188AC900D07D69 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				11153A8A22187CAE0064F116 /* Base */,
+				11488CB922188AC900D07D69 /* Base */,
+				11488CBB22188ACF00D07D69 /* vi */,
 			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		11153A8E22187CB00064F116 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				11153A8F22187CB00064F116 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -316,6 +510,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -363,7 +558,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -377,6 +572,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -418,7 +614,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -434,7 +630,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z2HAJP9Q8N;
-				INFOPLIST_FILE = Challenge/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Challenge/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,7 +652,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z2HAJP9Q8N;
-				INFOPLIST_FILE = Challenge/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Challenge/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -556,7 +760,7 @@
 				11153AA922187CB00064F116 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		11153AAA22187CB00064F116 /* Build configuration list for PBXNativeTarget "Challenge" */ = {
 			isa = XCConfigurationList;
@@ -565,7 +769,7 @@
 				11153AAC22187CB00064F116 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		11153AAD22187CB00064F116 /* Build configuration list for PBXNativeTarget "ChallengeTests" */ = {
 			isa = XCConfigurationList;
@@ -574,7 +778,7 @@
 				11153AAF22187CB00064F116 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		11153AB022187CB00064F116 /* Build configuration list for PBXNativeTarget "ChallengeUITests" */ = {
 			isa = XCConfigurationList;
@@ -583,7 +787,7 @@
 				11153AB222187CB00064F116 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

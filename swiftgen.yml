@@ -1,0 +1,39 @@
+input_dir: Challenge
+output_dir: Challenge
+
+strings:
+  inputs: 
+   - Resources/Base.lproj/Localizable.strings
+  outputs:
+   templateName: structured-swift4
+   output: Generated/strings.swift
+
+xcassets:
+  inputs:
+   - Resources/Assets.xcassets
+  outputs:
+   templateName: swift4
+   output: Generated/assets-images.swift
+
+ib:
+  inputs:
+   - Storyboards
+  outputs:
+   templateName: scenes-swift4
+   output: Generated/storyboards-scenes.swift
+   # templateName: segues-swift4
+   # output: Generated/storyboards-segues.swift
+
+# fonts:
+#   inputs:
+#    - Resources/Fonts
+#   outputs:
+#    templateName: swift4
+#    output: Generated/fonts.swift
+  
+# colors:
+#   inputs:
+#    - Resources/Colors.json
+#   outputs:
+#    templateName: swift4
+#    output: Generated/colors.swift
