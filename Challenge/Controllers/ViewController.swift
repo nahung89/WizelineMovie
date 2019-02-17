@@ -9,8 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    // MARK: - View Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+
+    // MARK: - Setup
+
+    // MARK: - Action
+
+    // MARK: - Data
 }
