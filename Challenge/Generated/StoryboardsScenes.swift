@@ -22,7 +22,7 @@ internal enum StoryboardScene {
 
     internal static let initialScene = InitialSceneType<UIKit.UINavigationController>(storyboard: Main.self)
 
-    internal static let viewController = SceneType<Challenge.ViewController>(storyboard: Main.self, identifier: "ViewController")
+    internal static let sampleViewController = SceneType<Challenge.SampleViewController>(storyboard: Main.self, identifier: "SampleViewController")
   }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name

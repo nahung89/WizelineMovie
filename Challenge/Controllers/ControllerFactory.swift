@@ -10,7 +10,13 @@ import Foundation
 
 final class ControllerFactory {
     static func makeSamplePresentable() -> ViewControllerType {
-        let controller = StoryboardScene.Main.viewController.instantiate()
+        let repository = SampleRepository()
+        let viewModelDependency = SampleViewModelDependency(repository: repository)
+        let viewModel = SampleViewModel(viewModelDependency)
+        let dependency = SampleViewControllerDependency(viewModel: viewModel)
+
+        let controller = StoryboardScene.Main.sampleViewController.instantiate()
+        controller.inject(dependency)
         return controller
     }
 }

@@ -13,7 +13,7 @@
 		11153AC8221880230064F116 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11153AC0221880230064F116 /* Assets.xcassets */; };
 		11153ACA221880230064F116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11153AC4221880230064F116 /* LaunchScreen.storyboard */; };
 		11153ACB221880230064F116 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11153AC5221880230064F116 /* Main.storyboard */; };
-		11153ACC221880230064F116 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11153AC7221880230064F116 /* ViewController.swift */; };
+		11153ACC221880230064F116 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11153AC7221880230064F116 /* SampleViewController.swift */; };
 		11153AE2221884900064F116 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153ADB2218848F0064F116 /* RxSwift.framework */; };
 		11153AE3221884900064F116 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153ADC221884900064F116 /* SwiftyJSON.framework */; };
 		11153AE4221884900064F116 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153ADD221884900064F116 /* Alamofire.framework */; };
@@ -47,6 +47,17 @@
 		11488D45221AFF5A00D07D69 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D44221AFF5A00D07D69 /* UIColor+Ext.swift */; };
 		11488D47221AFFC000D07D69 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D46221AFFC000D07D69 /* BaseViewController.swift */; };
 		11488D49221B019A00D07D69 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D48221B019A00D07D69 /* Strings.swift */; };
+		11488D4C221B048400D07D69 /* DataRequest+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D4A221B048400D07D69 /* DataRequest+Ext.swift */; };
+		11488D4D221B048400D07D69 /* SessionManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D4B221B048400D07D69 /* SessionManager+Ext.swift */; };
+		11488D51221B04D000D07D69 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D4F221B04D000D07D69 /* Recipe.swift */; };
+		11488D52221B04D000D07D69 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D50221B04D000D07D69 /* Recipes.swift */; };
+		11488D56221B051800D07D69 /* SampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D54221B051800D07D69 /* SampleViewModel.swift */; };
+		11488D57221B051800D07D69 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D55221B051800D07D69 /* ViewState.swift */; };
+		11488D5F221B057900D07D69 /* SampleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D5A221B057900D07D69 /* SampleRepository.swift */; };
+		11488D61221B057900D07D69 /* APIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D5C221B057900D07D69 /* APIState.swift */; };
+		11488D62221B057900D07D69 /* FoodAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D5D221B057900D07D69 /* FoodAPI.swift */; };
+		11488D63221B057900D07D69 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D5E221B057900D07D69 /* APIEndpoint.swift */; };
+		11488D66221B099400D07D69 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D65221B099400D07D69 /* RecipeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +90,7 @@
 		11153AC2221880230064F116 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11153AC4221880230064F116 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11153AC5221880230064F116 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		11153AC7221880230064F116 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11153AC7221880230064F116 /* SampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		11153ADB2218848F0064F116 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		11153ADC221884900064F116 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		11153ADD221884900064F116 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -114,6 +125,17 @@
 		11488D44221AFF5A00D07D69 /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		11488D46221AFFC000D07D69 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		11488D48221B019A00D07D69 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Challenge/Generated/Strings.swift; sourceTree = SOURCE_ROOT; };
+		11488D4A221B048400D07D69 /* DataRequest+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataRequest+Ext.swift"; sourceTree = "<group>"; };
+		11488D4B221B048400D07D69 /* SessionManager+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SessionManager+Ext.swift"; sourceTree = "<group>"; };
+		11488D4F221B04D000D07D69 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		11488D50221B04D000D07D69 /* Recipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
+		11488D54221B051800D07D69 /* SampleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleViewModel.swift; sourceTree = "<group>"; };
+		11488D55221B051800D07D69 /* ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		11488D5A221B057900D07D69 /* SampleRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleRepository.swift; sourceTree = "<group>"; };
+		11488D5C221B057900D07D69 /* APIState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIState.swift; sourceTree = "<group>"; };
+		11488D5D221B057900D07D69 /* FoodAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodAPI.swift; sourceTree = "<group>"; };
+		11488D5E221B057900D07D69 /* APIEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		11488D65221B099400D07D69 /* RecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,7 +198,11 @@
 				11153A8522187CAE0064F116 /* AppDelegate.swift */,
 				11488CD62218EBF200D07D69 /* AppDelegate+Config.swift */,
 				11488CC82218EB3E00D07D69 /* Coordinators */,
+				11488D58221B057900D07D69 /* Networking */,
+				11488D4E221B049F00D07D69 /* Models */,
+				11488D53221B04F700D07D69 /* ViewModels */,
 				11153AC6221880230064F116 /* Controllers */,
+				11488D64221B099400D07D69 /* Views */,
 				11153AC3221880230064F116 /* Storyboards */,
 				11488CD82218EC3600D07D69 /* Ultilities */,
 				11153ABF221880230064F116 /* Resources */,
@@ -237,7 +263,7 @@
 				11488D38221AFD5200D07D69 /* ControllerFactory.swift */,
 				11488D3A221AFD9900D07D69 /* ControllerProtocols.swift */,
 				11488D46221AFFC000D07D69 /* BaseViewController.swift */,
-				11153AC7221880230064F116 /* ViewController.swift */,
+				11153AC7221880230064F116 /* SampleViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -313,6 +339,8 @@
 		11488CD92218EC4300D07D69 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				11488D4A221B048400D07D69 /* DataRequest+Ext.swift */,
+				11488D4B221B048400D07D69 /* SessionManager+Ext.swift */,
 				11488D42221AFF1B00D07D69 /* Optional+Ext.swift */,
 				11488CE52218EF3600D07D69 /* Array+Ext.swift */,
 				11488CDA2218EC4F00D07D69 /* XCGLogger+Ext.swift */,
@@ -327,6 +355,51 @@
 				11488CE12218EE2000D07D69 /* NameDescribable.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		11488D4E221B049F00D07D69 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11488D4F221B04D000D07D69 /* Recipe.swift */,
+				11488D50221B04D000D07D69 /* Recipes.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		11488D53221B04F700D07D69 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				11488D55221B051800D07D69 /* ViewState.swift */,
+				11488D54221B051800D07D69 /* SampleViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		11488D58221B057900D07D69 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				11488D5C221B057900D07D69 /* APIState.swift */,
+				11488D5E221B057900D07D69 /* APIEndpoint.swift */,
+				11488D5D221B057900D07D69 /* FoodAPI.swift */,
+				11488D59221B057900D07D69 /* Repositories */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		11488D59221B057900D07D69 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				11488D5A221B057900D07D69 /* SampleRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		11488D64221B099400D07D69 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11488D65221B099400D07D69 /* RecipeCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -559,26 +632,37 @@
 			files = (
 				11488D41221AFEDC00D07D69 /* StoryboardsScenes.swift in Sources */,
 				11488CE22218EE2000D07D69 /* NameDescribable.swift in Sources */,
+				11488D62221B057900D07D69 /* FoodAPI.swift in Sources */,
+				11488D61221B057900D07D69 /* APIState.swift in Sources */,
 				11488CD42218EB8B00D07D69 /* TabbarRouter.swift in Sources */,
 				11488D31221AFC6A00D07D69 /* AppCoordinator.swift in Sources */,
 				11488CD02218EB8B00D07D69 /* NavigationRouter.swift in Sources */,
+				11488D4C221B048400D07D69 /* DataRequest+Ext.swift in Sources */,
+				11488D57221B051800D07D69 /* ViewState.swift in Sources */,
 				11488D3B221AFD9900D07D69 /* ControllerProtocols.swift in Sources */,
 				11488CD32218EB8B00D07D69 /* Router.swift in Sources */,
 				11488D45221AFF5A00D07D69 /* UIColor+Ext.swift in Sources */,
 				11488D39221AFD5200D07D69 /* ControllerFactory.swift in Sources */,
 				11488D49221B019A00D07D69 /* Strings.swift in Sources */,
+				11488D56221B051800D07D69 /* SampleViewModel.swift in Sources */,
 				11488CD12218EB8B00D07D69 /* DeepLinkOption.swift in Sources */,
 				11488CDB2218EC4F00D07D69 /* XCGLogger+Ext.swift in Sources */,
+				11488D63221B057900D07D69 /* APIEndpoint.swift in Sources */,
 				11488CD52218EB8B00D07D69 /* Coordinator.swift in Sources */,
 				11488D47221AFFC000D07D69 /* BaseViewController.swift in Sources */,
 				11488D3D221AFE2300D07D69 /* CoordinatorProtocols.swift in Sources */,
 				11488CD72218EBF200D07D69 /* AppDelegate+Config.swift in Sources */,
-				11153ACC221880230064F116 /* ViewController.swift in Sources */,
+				11153ACC221880230064F116 /* SampleViewController.swift in Sources */,
 				11488D37221AFD2500D07D69 /* AlertCoordinator.swift in Sources */,
 				11153A8622187CAE0064F116 /* AppDelegate.swift in Sources */,
 				11488D35221AFCF800D07D69 /* MainCoordinator.swift in Sources */,
 				11488CE62218EF3700D07D69 /* Array+Ext.swift in Sources */,
+				11488D4D221B048400D07D69 /* SessionManager+Ext.swift in Sources */,
+				11488D51221B04D000D07D69 /* Recipe.swift in Sources */,
 				11488D33221AFCD800D07D69 /* CoordinatorFactory.swift in Sources */,
+				11488D5F221B057900D07D69 /* SampleRepository.swift in Sources */,
+				11488D66221B099400D07D69 /* RecipeCell.swift in Sources */,
+				11488D52221B04D000D07D69 /* Recipes.swift in Sources */,
 				11488CD22218EB8B00D07D69 /* Presentable.swift in Sources */,
 				11488D3F221AFECA00D07D69 /* AssetsImages.swift in Sources */,
 				11488CDD2218ECBC00D07D69 /* Const.swift in Sources */,
