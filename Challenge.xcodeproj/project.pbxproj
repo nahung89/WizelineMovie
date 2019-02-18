@@ -23,9 +23,6 @@
 		11153AE8221884900064F116 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153AE1221884900064F116 /* RxCocoa.framework */; };
 		11153AEA2218852B0064F116 /* Reusable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153AE92218852B0064F116 /* Reusable.framework */; };
 		11488CBA22188AC900D07D69 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11488CB822188AC900D07D69 /* Localizable.strings */; };
-		11488CBD22188C1600D07D69 /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488CBC22188C1600D07D69 /* assets-images.swift */; };
-		11488CBF22188C2300D07D69 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488CBE22188C2300D07D69 /* strings.swift */; };
-		11488CC122188C2A00D07D69 /* storyboards-scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488CC022188C2A00D07D69 /* storyboards-scenes.swift */; };
 		11488CD02218EB8B00D07D69 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488CCA2218EB8B00D07D69 /* NavigationRouter.swift */; };
 		11488CD12218EB8B00D07D69 /* DeepLinkOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488CCB2218EB8B00D07D69 /* DeepLinkOption.swift */; };
 		11488CD22218EB8B00D07D69 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488CCC2218EB8B00D07D69 /* Presentable.swift */; };
@@ -37,6 +34,19 @@
 		11488CDD2218ECBC00D07D69 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488CDC2218ECBC00D07D69 /* Const.swift */; };
 		11488CE22218EE2000D07D69 /* NameDescribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488CE12218EE2000D07D69 /* NameDescribable.swift */; };
 		11488CE62218EF3700D07D69 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488CE52218EF3600D07D69 /* Array+Ext.swift */; };
+		11488D31221AFC6A00D07D69 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D30221AFC6A00D07D69 /* AppCoordinator.swift */; };
+		11488D33221AFCD800D07D69 /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D32221AFCD800D07D69 /* CoordinatorFactory.swift */; };
+		11488D35221AFCF800D07D69 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D34221AFCF700D07D69 /* MainCoordinator.swift */; };
+		11488D37221AFD2500D07D69 /* AlertCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D36221AFD2500D07D69 /* AlertCoordinator.swift */; };
+		11488D39221AFD5200D07D69 /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D38221AFD5200D07D69 /* ControllerFactory.swift */; };
+		11488D3B221AFD9900D07D69 /* ControllerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D3A221AFD9900D07D69 /* ControllerProtocols.swift */; };
+		11488D3D221AFE2300D07D69 /* CoordinatorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D3C221AFE2300D07D69 /* CoordinatorProtocols.swift */; };
+		11488D3F221AFECA00D07D69 /* AssetsImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D3E221AFECA00D07D69 /* AssetsImages.swift */; };
+		11488D41221AFEDC00D07D69 /* StoryboardsScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D40221AFEDC00D07D69 /* StoryboardsScenes.swift */; };
+		11488D43221AFF1B00D07D69 /* Optional+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D42221AFF1B00D07D69 /* Optional+Ext.swift */; };
+		11488D45221AFF5A00D07D69 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D44221AFF5A00D07D69 /* UIColor+Ext.swift */; };
+		11488D47221AFFC000D07D69 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D46221AFFC000D07D69 /* BaseViewController.swift */; };
+		11488D49221B019A00D07D69 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D48221B019A00D07D69 /* Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,9 +90,6 @@
 		11153AE92218852B0064F116 /* Reusable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reusable.framework; path = Carthage/Build/iOS/Reusable.framework; sourceTree = "<group>"; };
 		11488CB922188AC900D07D69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		11488CBB22188ACF00D07D69 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
-		11488CBC22188C1600D07D69 /* assets-images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "assets-images.swift"; path = "Challenge/Generated/assets-images.swift"; sourceTree = SOURCE_ROOT; };
-		11488CBE22188C2300D07D69 /* strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = strings.swift; path = Challenge/Generated/strings.swift; sourceTree = SOURCE_ROOT; };
-		11488CC022188C2A00D07D69 /* storyboards-scenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "storyboards-scenes.swift"; path = "Challenge/Generated/storyboards-scenes.swift"; sourceTree = SOURCE_ROOT; };
 		11488CCA2218EB8B00D07D69 /* NavigationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		11488CCB2218EB8B00D07D69 /* DeepLinkOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkOption.swift; sourceTree = "<group>"; };
 		11488CCC2218EB8B00D07D69 /* Presentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
@@ -94,6 +101,19 @@
 		11488CDC2218ECBC00D07D69 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		11488CE12218EE2000D07D69 /* NameDescribable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameDescribable.swift; sourceTree = "<group>"; };
 		11488CE52218EF3600D07D69 /* Array+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
+		11488D30221AFC6A00D07D69 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		11488D32221AFCD800D07D69 /* CoordinatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		11488D34221AFCF700D07D69 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		11488D36221AFD2500D07D69 /* AlertCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertCoordinator.swift; sourceTree = "<group>"; };
+		11488D38221AFD5200D07D69 /* ControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
+		11488D3A221AFD9900D07D69 /* ControllerProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerProtocols.swift; sourceTree = "<group>"; };
+		11488D3C221AFE2300D07D69 /* CoordinatorProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocols.swift; sourceTree = "<group>"; };
+		11488D3E221AFECA00D07D69 /* AssetsImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssetsImages.swift; path = Challenge/Generated/AssetsImages.swift; sourceTree = SOURCE_ROOT; };
+		11488D40221AFEDC00D07D69 /* StoryboardsScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardsScenes.swift; path = Challenge/Generated/StoryboardsScenes.swift; sourceTree = SOURCE_ROOT; };
+		11488D42221AFF1B00D07D69 /* Optional+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Ext.swift"; sourceTree = "<group>"; };
+		11488D44221AFF5A00D07D69 /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		11488D46221AFFC000D07D69 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		11488D48221B019A00D07D69 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Challenge/Generated/Strings.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,7 +224,7 @@
 		11153AC3221880230064F116 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				11488CC022188C2A00D07D69 /* storyboards-scenes.swift */,
+				11488D40221AFEDC00D07D69 /* StoryboardsScenes.swift */,
 				11153AC4221880230064F116 /* LaunchScreen.storyboard */,
 				11153AC5221880230064F116 /* Main.storyboard */,
 			);
@@ -214,6 +234,9 @@
 		11153AC6221880230064F116 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				11488D38221AFD5200D07D69 /* ControllerFactory.swift */,
+				11488D3A221AFD9900D07D69 /* ControllerProtocols.swift */,
+				11488D46221AFFC000D07D69 /* BaseViewController.swift */,
 				11153AC7221880230064F116 /* ViewController.swift */,
 			);
 			path = Controllers;
@@ -237,7 +260,7 @@
 		11488CB2221885F100D07D69 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				11488CBC22188C1600D07D69 /* assets-images.swift */,
+				11488D3E221AFECA00D07D69 /* AssetsImages.swift */,
 				11153AC0221880230064F116 /* Assets.xcassets */,
 			);
 			name = Assets;
@@ -246,7 +269,7 @@
 		11488CB52218860F00D07D69 /* Localize */ = {
 			isa = PBXGroup;
 			children = (
-				11488CBE22188C2300D07D69 /* strings.swift */,
+				11488D48221B019A00D07D69 /* Strings.swift */,
 				11488CB822188AC900D07D69 /* Localizable.strings */,
 			);
 			name = Localize;
@@ -256,6 +279,11 @@
 			isa = PBXGroup;
 			children = (
 				11488CC92218EB8B00D07D69 /* CoordinatorKit */,
+				11488D32221AFCD800D07D69 /* CoordinatorFactory.swift */,
+				11488D3C221AFE2300D07D69 /* CoordinatorProtocols.swift */,
+				11488D30221AFC6A00D07D69 /* AppCoordinator.swift */,
+				11488D34221AFCF700D07D69 /* MainCoordinator.swift */,
+				11488D36221AFD2500D07D69 /* AlertCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -285,8 +313,10 @@
 		11488CD92218EC4300D07D69 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				11488D42221AFF1B00D07D69 /* Optional+Ext.swift */,
 				11488CE52218EF3600D07D69 /* Array+Ext.swift */,
 				11488CDA2218EC4F00D07D69 /* XCGLogger+Ext.swift */,
+				11488D44221AFF5A00D07D69 /* UIColor+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -448,7 +478,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#echo \"SwiftFormat is disabled.\"; exit 0\n\nif which swiftformat >/dev/null; then\nswiftformat \"${SRCROOT}/$PROJECT_NAME\" --config \"${SRCROOT}/.swiftformat\"\nswiftformat \"${SRCROOT}/ChallengeTests\" --config \"${SRCROOT}/.swiftformat\"\nswiftformat \"${SRCROOT}/ChallengeUITests\" --config \"${SRCROOT}/.swiftformat\"\nelse\necho \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+			shellScript = "echo \"SwiftFormat is disabled.\"; exit 0\n\nif which swiftformat >/dev/null; then\nswiftformat \"${SRCROOT}/$PROJECT_NAME\" --config \"${SRCROOT}/.swiftformat\"\nswiftformat \"${SRCROOT}/ChallengeTests\" --config \"${SRCROOT}/.swiftformat\"\nswiftformat \"${SRCROOT}/ChallengeUITests\" --config \"${SRCROOT}/.swiftformat\"\nelse\necho \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
 		};
 		11153AB422187DAD0064F116 /* Run Script - SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -527,22 +557,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11488D41221AFEDC00D07D69 /* StoryboardsScenes.swift in Sources */,
 				11488CE22218EE2000D07D69 /* NameDescribable.swift in Sources */,
 				11488CD42218EB8B00D07D69 /* TabbarRouter.swift in Sources */,
-				11488CBD22188C1600D07D69 /* assets-images.swift in Sources */,
+				11488D31221AFC6A00D07D69 /* AppCoordinator.swift in Sources */,
 				11488CD02218EB8B00D07D69 /* NavigationRouter.swift in Sources */,
+				11488D3B221AFD9900D07D69 /* ControllerProtocols.swift in Sources */,
 				11488CD32218EB8B00D07D69 /* Router.swift in Sources */,
-				11488CC122188C2A00D07D69 /* storyboards-scenes.swift in Sources */,
-				11488CBF22188C2300D07D69 /* strings.swift in Sources */,
+				11488D45221AFF5A00D07D69 /* UIColor+Ext.swift in Sources */,
+				11488D39221AFD5200D07D69 /* ControllerFactory.swift in Sources */,
+				11488D49221B019A00D07D69 /* Strings.swift in Sources */,
 				11488CD12218EB8B00D07D69 /* DeepLinkOption.swift in Sources */,
 				11488CDB2218EC4F00D07D69 /* XCGLogger+Ext.swift in Sources */,
 				11488CD52218EB8B00D07D69 /* Coordinator.swift in Sources */,
+				11488D47221AFFC000D07D69 /* BaseViewController.swift in Sources */,
+				11488D3D221AFE2300D07D69 /* CoordinatorProtocols.swift in Sources */,
 				11488CD72218EBF200D07D69 /* AppDelegate+Config.swift in Sources */,
 				11153ACC221880230064F116 /* ViewController.swift in Sources */,
+				11488D37221AFD2500D07D69 /* AlertCoordinator.swift in Sources */,
 				11153A8622187CAE0064F116 /* AppDelegate.swift in Sources */,
+				11488D35221AFCF800D07D69 /* MainCoordinator.swift in Sources */,
 				11488CE62218EF3700D07D69 /* Array+Ext.swift in Sources */,
+				11488D33221AFCD800D07D69 /* CoordinatorFactory.swift in Sources */,
 				11488CD22218EB8B00D07D69 /* Presentable.swift in Sources */,
+				11488D3F221AFECA00D07D69 /* AssetsImages.swift in Sources */,
 				11488CDD2218ECBC00D07D69 /* Const.swift in Sources */,
+				11488D43221AFF1B00D07D69 /* Optional+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,34 +6,34 @@ strings:
    - Resources/Base.lproj/Localizable.strings
   outputs:
    templateName: structured-swift4
-   output: Generated/strings.swift
+   output: Generated/Strings.swift
 
 xcassets:
   inputs:
    - Resources/Assets.xcassets
   outputs:
    templateName: swift4
-   output: Generated/assets-images.swift
+   output: Generated/AssetsImages.swift
 
 ib:
   inputs:
    - Storyboards
   outputs:
    templateName: scenes-swift4
-   output: Generated/storyboards-scenes.swift
+   output: Generated/StoryboardsScenes.swift
    # templateName: segues-swift4
-   # output: Generated/storyboards-segues.swift
+   # output: Generated/StoryboardsSegues.swift
 
 # fonts:
 #   inputs:
 #    - Resources/Fonts
 #   outputs:
 #    templateName: swift4
-#    output: Generated/fonts.swift
+#    output: Generated/Fonts.swift
   
 # colors:
 #   inputs:
 #    - Resources/Colors.json
 #   outputs:
 #    templateName: swift4
-#    output: Generated/colors.swift
+#    output: Generated/Colors.swift

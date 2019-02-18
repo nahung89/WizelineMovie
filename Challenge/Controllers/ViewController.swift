@@ -8,15 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+protocol ViewControllerType: ErrorActionable {}
+
+class ViewController: BaseViewController, ViewControllerType {
+    var onErrorReceive: ((_ title: String?, _ error: Error) -> Void)?
+
     // MARK: - View Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setupUI()
     }
 
     // MARK: - Setup
+
+    private func setupUI() {
+        view.backgroundColor = UIColor.random()
+    }
 
     // MARK: - Action
 

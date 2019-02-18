@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct LogConfig {
+enum LogConfig {
     static let directoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("Logs", isDirectory: true)
     static let fileUrl = directoryUrl.appendingPathComponent("\(UIDevice.current.name)-\(Date()).log")
     static let sizesLimit = 1 * 1024 * 1024 // 1MB

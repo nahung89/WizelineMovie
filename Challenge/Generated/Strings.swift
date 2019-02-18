@@ -11,8 +11,8 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
-  /// Hello worlds.
-  internal static let hello = L10n.tr("Localizable", "HELLO")
+  /// Error
+  internal static let error = L10n.tr("Localizable", "ERROR")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name
