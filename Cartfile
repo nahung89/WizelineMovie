@@ -13,6 +13,9 @@ github "SwiftyJSON/SwiftyJSON"
 #DB
 github "realm/realm-cocoa"
 
+#UI
+github "onevcat/Kingfisher"
+github "AliSoftware/Reusable"
+
 #Helper
 github "radex/SwiftyUserDefaults"
-github "AliSoftware/Reusable"
