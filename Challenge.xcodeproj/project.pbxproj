@@ -86,6 +86,10 @@
 		11DADD4E221C9521004B92A4 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DADD4D221C9521004B92A4 /* Person.swift */; };
 		11DADD50221C96E5004B92A4 /* CastAndCrewPeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DADD4F221C96E5004B92A4 /* CastAndCrewPeopleTableViewCell.swift */; };
 		11DADD52221C9E88004B92A4 /* ViewSuspendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DADD51221C9E87004B92A4 /* ViewSuspendable.swift */; };
+		11DADD55221CA67F004B92A4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DADD54221CA67F004B92A4 /* SettingViewController.swift */; };
+		11DADD57221CA69D004B92A4 /* SettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DADD56221CA69D004B92A4 /* SettingCoordinator.swift */; };
+		11DADD5A221CA6CB004B92A4 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DADD59221CA6CB004B92A4 /* SettingViewModel.swift */; };
+		11DADD5C221CA82B004B92A4 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11DADD5B221CA82B004B92A4 /* Setting.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,6 +195,10 @@
 		11DADD4D221C9521004B92A4 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		11DADD4F221C96E5004B92A4 /* CastAndCrewPeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastAndCrewPeopleTableViewCell.swift; sourceTree = "<group>"; };
 		11DADD51221C9E87004B92A4 /* ViewSuspendable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSuspendable.swift; sourceTree = "<group>"; };
+		11DADD54221CA67F004B92A4 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		11DADD56221CA69D004B92A4 /* SettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCoordinator.swift; sourceTree = "<group>"; };
+		11DADD59221CA6CB004B92A4 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		11DADD5B221CA82B004B92A4 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +320,7 @@
 				11488D40221AFEDC00D07D69 /* StoryboardsScenes.swift */,
 				11153AC4221880230064F116 /* LaunchScreen.storyboard */,
 				11153AC5221880230064F116 /* Movie.storyboard */,
+				11DADD5B221CA82B004B92A4 /* Setting.storyboard */,
 				1198EAFF221B9E1700A1C625 /* Main.storyboard */,
 			);
 			path = Storyboards;
@@ -323,6 +332,7 @@
 				11488D38221AFD5200D07D69 /* ControllerFactory.swift */,
 				113439DF221BFFDB0021EC18 /* Base */,
 				113439DC221BFF820021EC18 /* Movie */,
+				11DADD53221CA654004B92A4 /* Setting */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -431,6 +441,7 @@
 				11488D30221AFC6A00D07D69 /* AppCoordinator.swift */,
 				11488D34221AFCF700D07D69 /* MainCoordinator.swift */,
 				1198EB01221B9E6D00A1C625 /* MovieCoordinator.swift */,
+				11DADD56221CA69D004B92A4 /* SettingCoordinator.swift */,
 				11488D36221AFD2500D07D69 /* AlertCoordinator.swift */,
 			);
 			path = Coordinators;
@@ -500,6 +511,7 @@
 			children = (
 				113439E3221C001C0021EC18 /* Base */,
 				113439DE221BFFA10021EC18 /* Movie */,
+				11DADD58221CA6B6004B92A4 /* Setting */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -548,6 +560,22 @@
 				11DADD31221C0FC6004B92A4 /* ImageService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		11DADD53221CA654004B92A4 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				11DADD54221CA67F004B92A4 /* SettingViewController.swift */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		11DADD58221CA6B6004B92A4 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				11DADD59221CA6CB004B92A4 /* SettingViewModel.swift */,
+			);
+			name = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -666,6 +694,7 @@
 				11153ACA221880230064F116 /* LaunchScreen.storyboard in Resources */,
 				11DADD36221C2363004B92A4 /* configuration.json in Resources */,
 				11DADD48221C7E11004B92A4 /* MovieDetailTableHeaderView.xib in Resources */,
+				11DADD5C221CA82B004B92A4 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -786,6 +815,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1198EAF2221B93AF00A1C625 /* Movie.swift in Sources */,
+				11DADD55221CA67F004B92A4 /* SettingViewController.swift in Sources */,
 				11488D41221AFEDC00D07D69 /* StoryboardsScenes.swift in Sources */,
 				1198EAF4221B95C700A1C625 /* MovieListRepository.swift in Sources */,
 				11488CE22218EE2000D07D69 /* NameDescribable.swift in Sources */,
@@ -813,6 +843,7 @@
 				113439C2221BC9DD0021EC18 /* MovieDetail.swift in Sources */,
 				11488CD52218EB8B00D07D69 /* Coordinator.swift in Sources */,
 				11488D47221AFFC000D07D69 /* BaseViewController.swift in Sources */,
+				11DADD57221CA69D004B92A4 /* SettingCoordinator.swift in Sources */,
 				1198EAF6221B95EC00A1C625 /* MovieList.swift in Sources */,
 				11488D3D221AFE2300D07D69 /* CoordinatorProtocols.swift in Sources */,
 				113439E2221C00070021EC18 /* MovieType.swift in Sources */,
@@ -826,6 +857,7 @@
 				11488D4D221B048400D07D69 /* SessionManager+Ext.swift in Sources */,
 				11488D33221AFCD800D07D69 /* CoordinatorFactory.swift in Sources */,
 				113439C4221BCA570021EC18 /* MovieGenre.swift in Sources */,
+				11DADD5A221CA6CB004B92A4 /* SettingViewModel.swift in Sources */,
 				11DADD46221C7D64004B92A4 /* MovieDetailTableHeaderView.swift in Sources */,
 				11DADD4A221C84F7004B92A4 /* CastAndCrewViewModel.swift in Sources */,
 				113439C0221BC8AD0021EC18 /* MovieDetailRepository.swift in Sources */,

@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import UIKit
 
-protocol CastAndCrewViewType: Presentable {}
+protocol CastAndCrewViewType: SettingActionable {}
 
 typealias CastAndCrewViewControllerDependency = CastAndCrewViewController.Dependency
 extension CastAndCrewViewController {
@@ -21,6 +21,7 @@ extension CastAndCrewViewController {
 
 class CastAndCrewViewController: BaseViewController, CastAndCrewViewType {
     var onErrorReceive: ((_ title: String?, _ error: Error) -> Void)?
+    var onSettingSelect: (() -> Void)?
 
     @IBOutlet private var movieTitleLabel: UILabel!
     @IBOutlet private var totalPeopleLabel: UILabel!
@@ -38,6 +39,17 @@ class CastAndCrewViewController: BaseViewController, CastAndCrewViewType {
         setupData()
     }
 
+    // Re-layout table header view manually, because auto-layout doesn't work for this case
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        guard let headerView = tableView.tableHeaderView else { return }
+        let size = headerView.systemLayoutSizeFitting(headerView.bounds.size)
+        if headerView.frame.size.height != size.height {
+            headerView.frame.size.height = size.height
+            tableView.tableHeaderView = headerView
+        }
+    }
+
     // MARK: - Setup
 
     func inject(_ dependency: Dependency) {
@@ -52,20 +64,17 @@ class CastAndCrewViewController: BaseViewController, CastAndCrewViewType {
         guard viewModel != nil else { fatalError("viewModel non-existed") }
 
         navigationItem.title = L10n.castAndCrews
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: L10n.setting, style: .plain, target: nil, action: nil)
         movieTitleLabel.text = "\(viewModel.detail.title) (\(viewModel.detail.releaseDate.toString(format: .isoYear)))"
         totalPeopleLabel.text = "\(viewModel.people.count) people"
         tableView.reloadData()
     }
 
-    // Re-layout table header view manually, because auto-layout doesn't work for this case
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        guard let headerView = tableView.tableHeaderView else { return }
-        let size = headerView.systemLayoutSizeFitting(headerView.bounds.size)
-        if headerView.frame.size.height != size.height {
-            headerView.frame.size.height = size.height
-            tableView.tableHeaderView = headerView
-        }
+    private func setupBinding() {
+        navigationItem.rightBarButtonItem?.rx.tap
+            .subscribe(onNext: { [unowned self] _ in
+                self.onSettingSelect?()
+            }).disposed(by: disposeBag)
     }
 }
 

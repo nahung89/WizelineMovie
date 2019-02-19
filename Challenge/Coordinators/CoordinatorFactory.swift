@@ -36,4 +36,10 @@ final class CoordinatorFactory {
     static func makeErrorAlertCoordinator(title: String?, error: Error) -> CoordinatorType {
         return AlertCoordinator(title: title, error: error)
     }
+
+    static func makeSettingCoordinator() -> CoordinatorPresentable {
+        let router = NavigationRouter(rootController: StoryboardScene.Setting.initialScene.instantiate())
+        let coordinator = SettingCoordinator(router: router)
+        return (coordinator, router)
+    }
 }
