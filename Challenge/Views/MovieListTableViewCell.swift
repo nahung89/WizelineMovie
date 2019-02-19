@@ -10,7 +10,7 @@ import Foundation
 import Reusable
 import UIKit
 
-class MovieListTableViewCell: UITableViewCell, Reusable {
+class MovieListTableViewCell: UITableViewCell, Reusable, ViewSuspendable {
     @IBOutlet private var posterImageView: UIImageView!
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var releaseDateLabel: UILabel!
@@ -46,5 +46,9 @@ class MovieListTableViewCell: UITableViewCell, Reusable {
         titleLabel.text = ""
         ratingLabel.text = ""
         releaseDateLabel.text = ""
+    }
+
+    func suspend() {
+        posterImageView.kf.cancelDownloadTask()
     }
 }

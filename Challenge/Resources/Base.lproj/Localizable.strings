@@ -18,3 +18,9 @@
 
 /* votes */
 "VOTES" = "votes";
+
+/* Cast & Crews */
+"CAST_AND_CREWS" = "Cast & Crews";
+
+/* See all */
+"SEE_ALL" = "See all";

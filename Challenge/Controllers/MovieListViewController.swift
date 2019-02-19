@@ -115,4 +115,8 @@ extension MovieListViewController: UITableViewDataSource, UITableViewDelegate {
 
         onMovieSelect?(movie)
     }
+
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        (cell as? ViewSuspendable)?.suspend()
+    }
 }

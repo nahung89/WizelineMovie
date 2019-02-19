@@ -7,10 +7,19 @@
 //
 
 import Foundation
-import UIKit
 import Reusable
+import UIKit
 
 class MovieDetailTableHeaderView: UITableViewHeaderFooterView, NibReusable {
+    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var nextButton: UIButton!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        titleLabel.text = L10n.castAndCrews
+        nextButton.setTitle(L10n.seeAll, for: .normal)
+    }
+
     var onSeeAllButtonSelect: (() -> Void)?
 
     @IBAction func seeAllButtonTouched(_ sender: UIButton) {

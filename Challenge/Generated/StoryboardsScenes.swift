@@ -27,6 +27,8 @@ internal enum StoryboardScene {
 
     internal static let initialScene = InitialSceneType<UIKit.UINavigationController>(storyboard: Movie.self)
 
+    internal static let castAndCrewViewController = SceneType<Challenge.CastAndCrewViewController>(storyboard: Movie.self, identifier: "CastAndCrewViewController")
+
     internal static let movieDetailViewController = SceneType<Challenge.MovieDetailViewController>(storyboard: Movie.self, identifier: "MovieDetailViewController")
 
     internal static let movieListViewController = SceneType<Challenge.MovieListViewController>(storyboard: Movie.self, identifier: "MovieListViewController")
