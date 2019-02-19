@@ -1,18 +1,19 @@
 //
-//  SampleRepository.swift
+//  ListMovieRepository.swift
 //  Challenge
 //
-//  Created by Nah on 2/17/19.
+//  Created by Nah on 2/19/19.
 //  Copyright © 2019 Nah. All rights reserved.
 //
 
 import Foundation
 import RxSwift
 
-class SampleRepository {
+class MovieListRepository {
     let apiState: BehaviorSubject<APIState> = BehaviorSubject(value: .stop)
 
-    private(set) var recipes: [Recipe] = []
+    private var movieList: MovieList?
+    private(set) var movies: [Movie] = []
 
     private var request: Disposable?
     private let disposeBag = DisposeBag()
@@ -21,15 +22,20 @@ class SampleRepository {
         request?.dispose()
         apiState.onNext(.request)
 
-        request = FoodAPI.getRecipes
-            .response(Recipes.self)
+        request = MovieAPI.getTopRatedMovies
+            .response(MovieList.self)
             .subscribe(onNext: { [unowned self] result in
-                self.recipes = result.recipes
+                self.bind(result)
                 self.apiState.onNext(.response)
             }, onError: { [unowned self] error in
                 self.apiState.onNext(.fail(error))
             })
 
         request?.disposed(by: disposeBag)
+    }
+
+    private func bind(_ result: MovieList) {
+        movieList = result
+        movies.append(contentsOf: result.movies)
     }
 }

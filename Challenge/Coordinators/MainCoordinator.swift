@@ -16,7 +16,7 @@ class MainCoordinator: Coordinator, CoordinatorErrorable {
     }
 
     override func start(_ option: DeepLinkOption?) {
-        let controller = ControllerFactory.makeSamplePresentable()
+        let controller = ControllerFactory.makeListMoviePresentable()
 
         controller.onErrorReceive = { [weak self] title, error in
             self?.openAlert(title: title, error: error)
