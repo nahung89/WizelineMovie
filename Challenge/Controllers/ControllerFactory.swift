@@ -47,4 +47,14 @@ final class ControllerFactory {
 
         return controller
     }
+
+    static func makeSettingPresentable() -> SettingViewType {
+        let viewModel = SettingViewModel()
+
+        let dependency = SettingViewControllerDependency(viewModel: viewModel)
+        let controller = StoryboardScene.Setting.settingViewController.instantiate()
+        controller.inject(dependency)
+
+        return controller
+    }
 }

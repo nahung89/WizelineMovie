@@ -21,6 +21,8 @@ internal enum L10n {
   internal static let nowPlaying = L10n.tr("Localizable", "NOW_PLAYING")
   /// See all
   internal static let seeAll = L10n.tr("Localizable", "SEE_ALL")
+  /// Setting
+  internal static let setting = L10n.tr("Localizable", "SETTING")
   /// Top Rated
   internal static let topRated = L10n.tr("Localizable", "TOP_RATED")
   /// vote

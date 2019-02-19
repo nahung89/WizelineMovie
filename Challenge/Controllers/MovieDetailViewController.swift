@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-protocol MovieDetailViewType: ErrorActionable {
+protocol MovieDetailViewType: ErrorActionable, SettingActionable {
     var onCastCrewSelect: ((_ detail: MovieDetail, _ credits: MovieCredits) -> Void)? { get set }
 }
 
@@ -35,6 +35,7 @@ extension MovieDetailViewController {
 class MovieDetailViewController: BaseViewController, MovieDetailViewType {
     var onErrorReceive: ((_ title: String?, _ error: Error) -> Void)?
     var onCastCrewSelect: ((_ detail: MovieDetail, _ credits: MovieCredits) -> Void)?
+    var onSettingSelect: (() -> Void)?
 
     @IBOutlet private var tableView: UITableView!
     private let refreshControl = UIRefreshControl()
@@ -60,12 +61,18 @@ class MovieDetailViewController: BaseViewController, MovieDetailViewType {
 
     private func setupUI() {
         navigationItem.title = L10n.wizemovie
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: L10n.setting, style: .plain, target: nil, action: nil)
         tableView.addSubview(refreshControl)
         tableView.register(headerFooterViewType: MovieDetailTableHeaderView.self)
     }
 
     private func setupBinding() {
         guard viewModel != nil else { fatalError("viewModel non-existed") }
+
+        navigationItem.rightBarButtonItem?.rx.tap
+            .subscribe(onNext: { [unowned self] _ in
+                self.onSettingSelect?()
+            }).disposed(by: disposeBag)
 
         refreshControl.rx.controlEvent(.valueChanged)
             .filter({ [unowned self] in self.refreshControl.isRefreshing })

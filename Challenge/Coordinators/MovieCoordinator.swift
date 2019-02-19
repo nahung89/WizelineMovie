@@ -30,6 +30,10 @@ class MovieCoordinator: Coordinator, CoordinatorErrorable {
             self?.openDetailMovie(movie)
         }
 
+        controller.onSettingSelect = { [weak self] in
+            self?.openSetting()
+        }
+
         router.toPresent().tabBarItem.title = makeBarTitle()
         router.setRootModule(controller, animated: false)
     }
@@ -47,12 +51,28 @@ private extension MovieCoordinator {
             self?.openCastCrew(detail, credits: credits)
         }
 
+        controller.onSettingSelect = { [weak self] in
+            self?.openSetting()
+        }
+
         router.push(controller, animated: true, hideBottomBar: true)
     }
 
     func openCastCrew(_ detail: MovieDetail, credits: MovieCredits) {
         let controller = ControllerFactory.makeCastAndCrewPresentable(detail: detail, credits: credits)
         router.push(controller, animated: true, hideBottomBar: true)
+    }
+
+    func openSetting() {
+        let (coordinator, presentable) = CoordinatorFactory.makeSettingCoordinator()
+
+        coordinator.finishCallback = { [unowned self] caller in
+            self.removeDependency(caller)
+        }
+
+        router.present(presentable, animated: true)
+        addDependency(coordinator)
+        coordinator.start()
     }
 
     func makeBarTitle() -> String {

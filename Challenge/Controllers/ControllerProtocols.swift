@@ -11,3 +11,7 @@ import Foundation
 protocol ErrorActionable: Presentable {
     var onErrorReceive: ((_ title: String?, _ error: Error) -> Void)? { get set }
 }
+
+protocol SettingActionable: Presentable {
+    var onSettingSelect: (() -> Void)? { get set }
+}
