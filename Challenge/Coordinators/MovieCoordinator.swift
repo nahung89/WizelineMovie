@@ -43,7 +43,15 @@ private extension MovieCoordinator {
             self?.openAlert(title: title, error: error)
         }
 
+        controller.onCastCrewSelect = { [weak self] detail, credits in
+            self?.openCastCrew(detail, credits: credits)
+        }
+
         router.push(controller, animated: true, hideBottomBar: true)
+    }
+
+    func openCastCrew(_ detai: MovieDetail, credits: MovieCredits) {
+        logger?.warning("Implement")
     }
 
     func makeBarTitle() -> String {

@@ -11,17 +11,30 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-protocol MovieDetailViewType: ErrorActionable {}
+protocol MovieDetailViewType: ErrorActionable {
+    var onCastCrewSelect: ((_ detail: MovieDetail, _ credits: MovieCredits) -> Void)? { get set }
+}
 
 typealias MovieDetailViewControllerDependency = MovieDetailViewController.Dependency
 extension MovieDetailViewController {
     struct Dependency {
         let viewModel: MovieDetailViewModel
     }
+
+    enum Section {
+        case detail, credits
+    }
+
+    enum Row {
+        case backdrop, title, summary
+        case casts
+        case director
+    }
 }
 
 class MovieDetailViewController: BaseViewController, MovieDetailViewType {
     var onErrorReceive: ((_ title: String?, _ error: Error) -> Void)?
+    var onCastCrewSelect: ((_ detail: MovieDetail, _ credits: MovieCredits) -> Void)?
 
     @IBOutlet private var tableView: UITableView!
     private let refreshControl = UIRefreshControl()
@@ -48,6 +61,7 @@ class MovieDetailViewController: BaseViewController, MovieDetailViewType {
     private func setupUI() {
         navigationItem.title = L10n.wizemovie
         tableView.addSubview(refreshControl)
+        tableView.register(headerFooterViewType: MovieDetailTableHeaderView.self)
     }
 
     private func setupBinding() {
@@ -80,34 +94,75 @@ class MovieDetailViewController: BaseViewController, MovieDetailViewType {
 }
 
 extension MovieDetailViewController: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.sections.count
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        guard
+            let _section = viewModel.sections.get(at: section),
+            let rows = viewModel.rowsInSections[_section]
+        else { return 0 }
+        return rows.count
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let _section = viewModel.sections.get(at: section) else { return nil }
+        switch _section {
+        case .credits:
+            let headerView = tableView.dequeueReusableHeaderFooterView(MovieDetailTableHeaderView.self)
+            headerView?.onSeeAllButtonSelect = { [weak self] in
+                guard let self = self else { return }
+                self.onCastCrewSelect?(self.viewModel.movieDetail, self.viewModel.movieCredits)
+            }
+            return headerView
+
+        case .detail:
+            return nil
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 1
+        guard let _section = viewModel.sections.get(at: section) else { return 1 }
+        switch _section {
+        case .credits:
+            return 44
+        case .detail:
+            return 1
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
+        guard
+            let section = viewModel.sections.get(at: indexPath.section),
+            let row = viewModel.rowsInSections[section]?.get(at: indexPath.row)
+        else { return UITableViewCell() }
+
+        switch row {
+        case .backdrop:
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MovieDetailBackdropTableViewCell.self)
             cell.movie = viewModel.movieDetail
             return cell
 
-        case 1:
+        case .title:
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MovieDetailBaseInfoTableViewCell.self)
             cell.movie = viewModel.movieDetail
             return cell
 
-        case 2:
+        case .summary:
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MovieDetailSumaryTableViewCell.self)
             cell.movie = viewModel.movieDetail
             return cell
 
-        default:
-            assertionFailure("out of range")
-            return UITableViewCell()
+        case .casts:
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MovieDetailCastTableViewCell.self)
+            cell.casts = viewModel.movieCredits.casts
+            return cell
+
+        case .director:
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MovieDetailDirectorTableViewCell.self)
+            cell.crews = viewModel.movieCredits.crews
+            return cell
         }
     }
 }

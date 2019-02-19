@@ -25,12 +25,12 @@
 [#] 2.6 Display full description of the movie
 [#] 2.7 Display rating of the movie
 
-[ ] 2.8 Create a section called “Cast and Crews”
-[ ]     + Display the name, character and image of the top 4 cast
-[ ]     + Display the name of the director
+[#] 2.8 Create a section called “Cast and Crews”
+[#]     + Display the name, character and image of the top 4 cast
+[#]     + Display the name of the director
 [ ] 2.9 User can tap on See all button to see the full list of cast and crews
 [ ]     + Required 2.8 (see wireframe in Cast & Crews Screen)
-[ ] 2.10 Some movies have more than one director. Please handle:
+[#] 2.10 Some movies have more than one director. Please handle:
          + If there is one director, show: Director: Michael Bay
          + If there are 2 directors, show Directors: Michael Bay & Corin Hardy
          + If there are more than 2 directors, show Directors: Michael Bay & 3 more

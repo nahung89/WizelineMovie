@@ -21,15 +21,12 @@ struct MovieDetail: MovieType, Decodable {
     let genres: [MovieGenre]
 
     private enum CodingKeys: String, CodingKey {
-        case id
-        case title
+        case id, title, overview, genres
         case voteAverage = "vote_average"
         case totalVotes = "vote_count"
         case posterPath = "poster_path"
         case backdropPath = "backdrop_path"
-        case overview
         case releaseDate = "release_date"
-        case genres
         case duration = "runtime"
     }
 }
