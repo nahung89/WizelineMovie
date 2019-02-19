@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Eab-3B-VLz" customClass="MovieDetailTableHeaderView" customModule="Challenge" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w4n-oB-1Dz">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Casts &amp; Crews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCs-cz-sLI">
+                            <rect key="frame" x="8" y="11" width="304" height="53"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJr-si-uWA">
+                            <rect key="frame" x="317" y="8" width="50" height="59"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="hIR-4j-4Ff"/>
+                            </constraints>
+                            <state key="normal" title="See all"/>
+                            <connections>
+                                <action selector="seeAllButtonTouched:" destination="Eab-3B-VLz" eventType="touchUpInside" id="e2i-XW-osG"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottomMargin" secondItem="bCs-cz-sLI" secondAttribute="bottom" constant="3" id="1Md-el-B5B"/>
+                        <constraint firstItem="SJr-si-uWA" firstAttribute="trailing" secondItem="w4n-oB-1Dz" secondAttribute="trailingMargin" id="9RY-W0-UcG"/>
+                        <constraint firstItem="bCs-cz-sLI" firstAttribute="leading" secondItem="w4n-oB-1Dz" secondAttribute="leadingMargin" id="Gie-IJ-Xow"/>
+                        <constraint firstAttribute="bottomMargin" secondItem="SJr-si-uWA" secondAttribute="bottom" id="HrH-Yi-dBv"/>
+                        <constraint firstItem="SJr-si-uWA" firstAttribute="top" secondItem="w4n-oB-1Dz" secondAttribute="topMargin" id="S6F-GM-99V"/>
+                        <constraint firstItem="SJr-si-uWA" firstAttribute="leading" secondItem="bCs-cz-sLI" secondAttribute="trailing" constant="5" id="mMg-V4-J3a"/>
+                        <constraint firstItem="bCs-cz-sLI" firstAttribute="top" secondItem="w4n-oB-1Dz" secondAttribute="topMargin" constant="3" id="umJ-4s-85z"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="w4n-oB-1Dz" firstAttribute="top" secondItem="Eab-3B-VLz" secondAttribute="top" id="LuR-gT-dnA"/>
+                <constraint firstItem="fG0-TW-GT3" firstAttribute="trailing" secondItem="w4n-oB-1Dz" secondAttribute="trailing" id="f4W-xu-pX2"/>
+                <constraint firstItem="w4n-oB-1Dz" firstAttribute="leading" secondItem="fG0-TW-GT3" secondAttribute="leading" id="t6W-Zh-qol"/>
+                <constraint firstAttribute="bottom" secondItem="w4n-oB-1Dz" secondAttribute="bottom" id="udv-JD-fVm"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fG0-TW-GT3"/>
+            <point key="canvasLocation" x="191.19999999999999" y="-125.4872563718141"/>
+        </view>
+    </objects>
+</document>

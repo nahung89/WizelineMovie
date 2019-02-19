@@ -23,9 +23,11 @@ final class ControllerFactory {
     }
 
     static func makeDetailMoviePresentable(_ movie: Movie) -> MovieDetailViewType {
-        let repository = MovieDetailRepository(movie: movie)
+        let detailRepository = MovieDetailRepository(movie: movie)
+        let creditRepository = MovieCreditsRepository(movieId: movie.id)
 
-        let viewModelDependency = MovieDetailViewModelDependency(repository: repository)
+        let viewModelDependency = MovieDetailViewModelDependency(detailRepository: detailRepository,
+                                                                 creditRepository: creditRepository)
         let viewModel = MovieDetailViewModel(viewModelDependency)
 
         let dependency = MovieDetailViewControllerDependency(viewModel: viewModel)

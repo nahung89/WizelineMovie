@@ -75,6 +75,12 @@
 		11DADD34221C111A004B92A4 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11DADD33221C111A004B92A4 /* Kingfisher.framework */; };
 		11DADD36221C2363004B92A4 /* configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 11DADD35221C2363004B92A4 /* configuration.json */; };
 		11DADD3A221C432A004B92A4 /* ImageConfigurationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DADD39221C432A004B92A4 /* ImageConfigurationRepository.swift */; };
+		11DADD3E221C5D46004B92A4 /* MovieCredits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DADD3D221C5D46004B92A4 /* MovieCredits.swift */; };
+		11DADD40221C60DD004B92A4 /* MovieCreditsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DADD3F221C60DD004B92A4 /* MovieCreditsRepository.swift */; };
+		11DADD42221C6E7F004B92A4 /* MovieDetailCastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DADD41221C6E7F004B92A4 /* MovieDetailCastTableViewCell.swift */; };
+		11DADD44221C6E96004B92A4 /* MovieDetailDirectorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DADD43221C6E96004B92A4 /* MovieDetailDirectorTableViewCell.swift */; };
+		11DADD46221C7D64004B92A4 /* MovieDetailTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DADD45221C7D64004B92A4 /* MovieDetailTableHeaderView.swift */; };
+		11DADD48221C7E11004B92A4 /* MovieDetailTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11DADD47221C7E11004B92A4 /* MovieDetailTableHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +175,12 @@
 		11DADD33221C111A004B92A4 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		11DADD35221C2363004B92A4 /* configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration.json; sourceTree = "<group>"; };
 		11DADD39221C432A004B92A4 /* ImageConfigurationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConfigurationRepository.swift; sourceTree = "<group>"; };
+		11DADD3D221C5D46004B92A4 /* MovieCredits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCredits.swift; sourceTree = "<group>"; };
+		11DADD3F221C60DD004B92A4 /* MovieCreditsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCreditsRepository.swift; sourceTree = "<group>"; };
+		11DADD41221C6E7F004B92A4 /* MovieDetailCastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailCastTableViewCell.swift; sourceTree = "<group>"; };
+		11DADD43221C6E96004B92A4 /* MovieDetailDirectorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailDirectorTableViewCell.swift; sourceTree = "<group>"; };
+		11DADD45221C7D64004B92A4 /* MovieDetailTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailTableHeaderView.swift; sourceTree = "<group>"; };
+		11DADD47221C7E11004B92A4 /* MovieDetailTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailTableHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +340,10 @@
 				113439C9221BD6F30021EC18 /* MovieDetailBackdropTableViewCell.swift */,
 				113439CB221BDA850021EC18 /* MovieDetailBaseInfoTableViewCell.swift */,
 				113439CF221BE1390021EC18 /* MovieDetailSumaryTableViewCell.swift */,
+				11DADD41221C6E7F004B92A4 /* MovieDetailCastTableViewCell.swift */,
+				11DADD43221C6E96004B92A4 /* MovieDetailDirectorTableViewCell.swift */,
+				11DADD45221C7D64004B92A4 /* MovieDetailTableHeaderView.swift */,
+				11DADD47221C7E11004B92A4 /* MovieDetailTableHeaderView.xib */,
 			);
 			name = Movie;
 			sourceTree = "<group>";
@@ -455,6 +471,7 @@
 			children = (
 				113439E0221BFFF70021EC18 /* Base */,
 				1198EAF5221B95EC00A1C625 /* MovieList.swift */,
+				11DADD3D221C5D46004B92A4 /* MovieCredits.swift */,
 				1198EAF1221B93AF00A1C625 /* Movie.swift */,
 				113439C1221BC9DD0021EC18 /* MovieDetail.swift */,
 				113439C3221BCA570021EC18 /* MovieGenre.swift */,
@@ -488,6 +505,7 @@
 				1198EAF3221B95C700A1C625 /* MovieListRepository.swift */,
 				113439BF221BC8AD0021EC18 /* MovieDetailRepository.swift */,
 				11DADD39221C432A004B92A4 /* ImageConfigurationRepository.swift */,
+				11DADD3F221C60DD004B92A4 /* MovieCreditsRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -632,6 +650,7 @@
 				11153ACB221880230064F116 /* Movie.storyboard in Resources */,
 				11153ACA221880230064F116 /* LaunchScreen.storyboard in Resources */,
 				11DADD36221C2363004B92A4 /* configuration.json in Resources */,
+				11DADD48221C7E11004B92A4 /* MovieDetailTableHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,6 +776,7 @@
 				11488CE22218EE2000D07D69 /* NameDescribable.swift in Sources */,
 				113439D0221BE1390021EC18 /* MovieDetailSumaryTableViewCell.swift in Sources */,
 				113439BE221BC8280021EC18 /* MovieDetailViewController.swift in Sources */,
+				11DADD42221C6E7F004B92A4 /* MovieDetailCastTableViewCell.swift in Sources */,
 				11488D62221B057900D07D69 /* MovieAPI.swift in Sources */,
 				1198EAFC221B98EF00A1C625 /* MovieListTableViewCell.swift in Sources */,
 				11488D61221B057900D07D69 /* APIState.swift in Sources */,
@@ -789,13 +809,17 @@
 				11488D4D221B048400D07D69 /* SessionManager+Ext.swift in Sources */,
 				11488D33221AFCD800D07D69 /* CoordinatorFactory.swift in Sources */,
 				113439C4221BCA570021EC18 /* MovieGenre.swift in Sources */,
+				11DADD46221C7D64004B92A4 /* MovieDetailTableHeaderView.swift in Sources */,
 				113439C0221BC8AD0021EC18 /* MovieDetailRepository.swift in Sources */,
 				113439C8221BCE2C0021EC18 /* MovieDetailViewModel.swift in Sources */,
 				11DADD2D221C0CE4004B92A4 /* Configuration.swift in Sources */,
+				11DADD40221C60DD004B92A4 /* MovieCreditsRepository.swift in Sources */,
 				11488CD22218EB8B00D07D69 /* Presentable.swift in Sources */,
 				113439CC221BDA850021EC18 /* MovieDetailBaseInfoTableViewCell.swift in Sources */,
 				11488D3F221AFECA00D07D69 /* AssetsImages.swift in Sources */,
 				1198EAFA221B983A00A1C625 /* MovieListViewController.swift in Sources */,
+				11DADD44221C6E96004B92A4 /* MovieDetailDirectorTableViewCell.swift in Sources */,
+				11DADD3E221C5D46004B92A4 /* MovieCredits.swift in Sources */,
 				11488CDD2218ECBC00D07D69 /* Const.swift in Sources */,
 				11488D43221AFF1B00D07D69 /* Optional+Ext.swift in Sources */,
 				113439CA221BD6F30021EC18 /* MovieDetailBackdropTableViewCell.swift in Sources */,

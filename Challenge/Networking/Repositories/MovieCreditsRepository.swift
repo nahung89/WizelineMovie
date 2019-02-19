@@ -1,5 +1,5 @@
 //
-//  MovieDetailRepository.swift
+//  MovieCreditsRepository.swift
 //  Challenge
 //
 //  Created by Nah on 2/19/19.
@@ -9,26 +9,25 @@
 import Foundation
 import RxSwift
 
-class MovieDetailRepository {
+class MovieCreditsRepository {
     let apiState: Variable<APIState> = Variable(.stop)
-
-    private(set) var movieDetail: MovieDetail
+    private(set) var movieCredits: MovieCredits
 
     private var request: Disposable?
     private let disposeBag = DisposeBag()
 
-    init(movie: Movie) {
-        movieDetail = MovieDetail(movie: movie)
+    init(movieId: Int) {
+        movieCredits = MovieCredits(id: movieId, casts: [], crews: [])
     }
 
     func fetch() {
         request?.dispose()
         apiState.value = .request
 
-        request = MovieAPI.getDetailMovie(movieId: movieDetail.id)
-            .response(MovieDetail.self)
+        request = MovieAPI.getMovieCredits(movieId: movieCredits.id)
+            .response(MovieCredits.self)
             .subscribe(onNext: { [unowned self] result in
-                self.movieDetail = result
+                self.movieCredits = result
                 self.apiState.value = .response
             }, onError: { [unowned self] error in
                 self.apiState.value = .fail(error)

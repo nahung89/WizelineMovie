@@ -12,7 +12,8 @@ import Foundation
 enum MovieAPI {
     case getTopRatedMovies(page: Int)
     case getNowPlayingMovies(page: Int)
-    case getDetailMovie(id: Int)
+    case getDetailMovie(movieId: Int)
+    case getMovieCredits(movieId: Int)
     case getConfiguration
 }
 
@@ -27,10 +28,12 @@ extension MovieAPI: APIEndpoint {
             return "/movie/top_rated"
         case .getNowPlayingMovies:
             return "/movie/now_playing"
-        case let .getDetailMovie(id):
-            return "/movie/\(id)"
+        case let .getDetailMovie(movieId):
+            return "/movie/\(movieId)"
         case .getConfiguration:
             return "/configuration"
+        case let .getMovieCredits(movieId):
+            return "/movie/\(movieId)/credits"
         }
     }
 
@@ -39,6 +42,7 @@ extension MovieAPI: APIEndpoint {
         case .getTopRatedMovies,
              .getNowPlayingMovies,
              .getDetailMovie,
+             .getMovieCredits,
              .getConfiguration:
             return .get
         }
