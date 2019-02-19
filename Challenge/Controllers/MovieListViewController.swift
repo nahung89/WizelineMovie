@@ -53,6 +53,7 @@ class MovieListViewController: BaseViewController, MovieListViewType {
         navigationItem.title = L10n.wizemovie
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: L10n.setting, style: .plain, target: nil, action: nil)
         tableView.addSubview(refreshControl)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Ad")
     }
 
     private func setupBinding() {
@@ -101,26 +102,37 @@ class MovieListViewController: BaseViewController, MovieListViewType {
 
 extension MovieListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.movies.count
+        return viewModel.feeds.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MovieListTableViewCell.self)
+        guard let feed = viewModel.feeds.get(at: indexPath.row) else { return UITableViewCell() }
 
-        guard let movie = viewModel.movies.get(at: indexPath.row) else { return cell }
-        cell.movie = movie
-        return cell
+        switch feed {
+        case let .ad(advertise):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Ad", for: indexPath)
+            cell.textLabel?.text = advertise.name
+            cell.contentView.backgroundColor = .lightGray
+            return cell
+
+        case let .movie(movie):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MovieListTableViewCell.self)
+            cell.movie = movie
+            return cell
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer { tableView.deselectRow(at: indexPath, animated: true) }
 
-        guard
-            let cell = tableView.cellForRow(at: indexPath) as? MovieListTableViewCell,
-            let movie = cell.movie
-        else { return }
+        guard let feed = viewModel.feeds.get(at: indexPath.row) else { return }
 
-        onMovieSelect?(movie)
+        switch feed {
+        case let .movie(movie):
+            onMovieSelect?(movie)
+        default:
+            break
+        }
     }
 
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {

@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct Advertise {
+    let name: String
+}

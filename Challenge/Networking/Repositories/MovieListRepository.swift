@@ -66,7 +66,7 @@ private extension MovieListRepository {
     func bind(_ result: MovieList) {
         currentPage = result.page
         totalPage = result.totalPages
-        movies.append(contentsOf: result.movies)
+        movies = result.movies
     }
 
     func makeAPI() -> MovieAPI? {

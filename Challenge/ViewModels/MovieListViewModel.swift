@@ -21,7 +21,7 @@ class MovieListViewModel {
     let onRefresh: PublishSubject<Void> = PublishSubject()
     let onLoadMore: PublishSubject<Void> = PublishSubject()
 
-    private(set) var movies: [Movie] = []
+    private(set) var feeds: [Feed] = []
 
     private let repository: MovieListRepository
     private let disposeBag = DisposeBag()
@@ -41,7 +41,7 @@ class MovieListViewModel {
             .map({ ViewState($0) })
             .do(onNext: { [unowned self] viewState in
                 guard viewState == .working else { return }
-                self.movies = self.repository.movies
+                self.feeds = self.parseData(self.repository.movies)
             })
             .bind(to: viewState)
             .disposed(by: disposeBag)
@@ -53,5 +53,24 @@ class MovieListViewModel {
 
     func loadMore() {
         repository.fetchNext()
+    }
+
+    func parseData(_ movies: [Movie]) -> [Feed] {
+        var newFeeds = feeds
+
+        var adIndex = newFeeds.lastIndex(where: { $0.isAd }) ?? 0
+        if adIndex > 0 {
+            adIndex = newFeeds.count - 1 - adIndex
+        }
+
+        for i in stride(from: 0, to: movies.count, by: 1) {
+            if adIndex + i > 0, (adIndex + i) % 3 == 0 {
+                let advertise = Advertise(name: "WIZELINE ADVERTISEMENT")
+                newFeeds.append(.ad(advertise))
+            }
+            newFeeds.append(.movie(movies[i]))
+        }
+
+        return newFeeds
     }
 }

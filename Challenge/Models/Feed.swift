@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+enum Feed {
+    case movie(Movie)
+    case ad(Advertise)
+
+    var isAd: Bool {
+        switch self {
+        case .ad:
+            return true
+        case .movie:
+            return false
+        }
+    }
+}
