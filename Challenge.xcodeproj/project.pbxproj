@@ -749,7 +749,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftgen >/dev/null; then\nswiftgen config run\nelse\necho \"warning: SwiftGen not installed, download from https://github.com/SwiftGen/SwiftGen\"\nfi\n\n";
+			shellScript = "echo \"SwiftGen is disabled.\"; exit 0\n\nif which swiftgen >/dev/null; then\nswiftgen config run\nelse\necho \"warning: SwiftGen not installed, download from https://github.com/SwiftGen/SwiftGen\"\nfi\n\n";
 		};
 		11153AB522187DD10064F116 /* Run Script - SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -767,7 +767,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "echo \"SwiftLint is disabled.\"; exit 0\n\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		11153AB622187E030064F116 /* Run Script - Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
