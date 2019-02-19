@@ -22,18 +22,18 @@ final class CoordinatorFactory {
     }
 
     static func makeTopRateMoviesCoordinator() -> CoordinatorPresentable {
-        let router = NavigationRouter(rootController: StoryboardScene.MovieList.initialScene.instantiate())
-        let coordinator = MovieListCoordinator(router: router, type: .topRate)
+        let router = NavigationRouter(rootController: StoryboardScene.Movie.initialScene.instantiate())
+        let coordinator = MovieCoordinator(router: router, type: .topRate)
         return (coordinator, router)
     }
 
     static func makeNowPlayingMoviesCoordinator() -> CoordinatorPresentable {
-        let router = NavigationRouter(rootController: StoryboardScene.MovieList.initialScene.instantiate())
-        let coordinator = MovieListCoordinator(router: router, type: .nowPlaying)
+        let router = NavigationRouter(rootController: StoryboardScene.Movie.initialScene.instantiate())
+        let coordinator = MovieCoordinator(router: router, type: .nowPlaying)
         return (coordinator, router)
     }
 
     static func makeErrorAlertCoordinator(title: String?, error: Error) -> CoordinatorType {
-        return AlertCoordinator(value: .error(title, error))
+        return AlertCoordinator(title: title, error: error)
     }
 }

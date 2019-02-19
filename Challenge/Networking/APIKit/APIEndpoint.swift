@@ -17,6 +17,7 @@ protocol APIEndpoint: URLRequestConvertible {
     var headers: HTTPHeaders { get }
     var parameters: Parameters? { get }
     var parameterEncoding: ParameterEncoding? { get }
+    var jsonDecoder: JSONDecoder { get }
 
     func response<T: Decodable>(_ type: T.Type) -> Observable<T>
 }
@@ -51,6 +52,6 @@ extension APIEndpoint {
     func response<T: Decodable>(_ type: T.Type) -> Observable<T> {
         return Alamofire.request(self)
             .validate()
-            .rx.responseEntity(type)
+            .rx.responseEntity(type, decoder: jsonDecoder)
     }
 }

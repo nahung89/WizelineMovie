@@ -8,15 +8,26 @@
 
 import Foundation
 
-struct Movie: Decodable {
+protocol MovieType {
+    var id: Int { get }
+    var title: String { get }
+    var voteAverage: Double { get }
+    var totalVotes: Double { get }
+    var posterPath: String? { get }
+    var backdropPath: String? { get }
+    var overview: String { get }
+    var releaseDate: Date { get }
+}
+
+struct Movie: MovieType, Decodable {
     let id: Int
     let title: String
     let voteAverage: Double
     let totalVotes: Double
-    let posterPath: String?; #warning("Update to `URL`")
-    let backdropPath: String?; #warning("Update to `URL`")
+    let posterPath: String?
+    let backdropPath: String?
     let overview: String
-    let releaseDate: String; #warning("Update to `DateTime`")
+    let releaseDate: Date
 
     private enum CodingKeys: String, CodingKey {
         case id
@@ -29,24 +40,3 @@ struct Movie: Decodable {
         case releaseDate = "release_date"
     }
 }
-
-// {
-//    "vote_count": 1978,
-//    "id": 19404,
-//    "video": false,
-//    "vote_average": 9.1,
-//    "title": "Dilwale Dulhania Le Jayenge",
-//    "popularity": 16.603,
-//    "poster_path": "\/uC6TTUhPpQCmgldGyYveKRAu8JN.jpg",
-//    "original_language": "hi",
-//    "original_title": "दिलवाले दुल्हनिया ले जायेंगे",
-//    "genre_ids": [
-//    35,
-//    18,
-//    10749
-//    ],
-//    "backdrop_path": "\/nl79FQ8xWZkhL3rDr1v2RFFR6J0.jpg",
-//    "adult": false,
-//    "overview": "Raj is a rich, carefree, happy-go-lucky second generation NRI. Simran is the daughter of Chaudhary Baldev Singh, who in spite of being an NRI is very strict about adherence to Indian values. Simran has left for India to be married to her childhood fiancé. Raj leaves for India with a mission at his hands, to claim his lady love under the noses of her whole family. Thus begins a saga.",
-//    "release_date": "1995-10-20"
-// }

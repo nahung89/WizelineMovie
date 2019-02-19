@@ -10,29 +10,32 @@ import Foundation
 import UIKit
 
 final class AlertCoordinator: Coordinator {
-    enum Value {
-        case error(String?, Error)
-    }
-
     private let window = UIWindow(frame: UIScreen.main.bounds)
-    private let value: Value
+    private let title: String?
+    private let error: Error
 
-    init(value: Value) {
-        self.value = value
+    init(title: String?, error: Error) {
+        self.title = title
+        self.error = error
         super.init()
     }
 
     override func start(_ option: DeepLinkOption?) {
-        let presentable: Presentable
-        switch value {
-        case let .error(title, error):
-            presentable = createError(title: title ?? L10n.error, message: error.localizedDescription)
+        let action = UIAlertAction(title: "OK", style: .cancel) { [weak self] _ in
+            self?.finish(animated: true)
         }
 
+        let alertController = UIAlertController(title: title ?? L10n.error,
+                                                message: error.localizedDescription,
+                                                preferredStyle: .alert)
+        alertController.addAction(action)
+
+        let rootController = UIViewController()
         window.windowLevel = .alert + 1
-        window.rootViewController = UIViewController()
+        window.rootViewController = rootController
         window.makeKeyAndVisible()
-        window.rootViewController?.present(presentable.toPresent(), animated: true)
+
+        rootController.present(alertController, animated: true)
     }
 
     override func handle(_ option: DeepLinkOption) -> Bool {
@@ -44,18 +47,5 @@ final class AlertCoordinator: Coordinator {
         window.rootViewController?.dismiss(animated: animated)
         window.resignKey()
         finishCallback?(self)
-    }
-}
-
-private extension AlertCoordinator {
-    func createError(title: String?, message: String) -> Presentable {
-        let action = UIAlertAction(title: "OK", style: .cancel) { [weak self] _ in
-            self?.finish(animated: true)
-        }
-
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(action)
-
-        return alertController
     }
 }

@@ -7,11 +7,9 @@
 //
 
 import Foundation
-import RxSwift
 
 class MainCoordinator: Coordinator {
     private let router: TabbarRouterType
-    private let disposeBag = DisposeBag()
 
     init(router: TabbarRouterType) {
         self.router = router

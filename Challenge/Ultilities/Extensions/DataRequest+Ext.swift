@@ -12,18 +12,6 @@ import RxSwift
 
 extension DataRequest: ReactiveCompatible {
     @discardableResult
-    func responseEntity<T: Decodable>(type: T.Type, completionHandler: @escaping (Alamofire.DataResponse<T>) -> Void) -> Self {
-        let decoder = JSONDecoder()
-        return response(queue: DispatchQueue.global(),
-                        responseSerializer: EntityResponseSerializer<T>(decoder),
-                        completionHandler: { response in
-                            DispatchQueue.main.async {
-                                completionHandler(response)
-                            }
-        })
-    }
-
-    @discardableResult
     func responseEntity<T: Decodable>(type: T.Type, decoder: JSONDecoder, completionHandler: @escaping (Alamofire.DataResponse<T>) -> Void) -> Self {
         return response(queue: DispatchQueue.global(),
                         responseSerializer: EntityResponseSerializer<T>(decoder),
@@ -36,7 +24,7 @@ extension DataRequest: ReactiveCompatible {
 }
 
 extension Reactive where Base: DataRequest {
-    func responseEntity<T: Decodable>(_ type: T.Type, decoder: JSONDecoder = JSONDecoder()) -> Observable<T> {
+    func responseEntity<T: Decodable>(_ type: T.Type, decoder: JSONDecoder) -> Observable<T> {
         return Observable<T>.create { observer in
             let request = self.base.responseEntity(type: type, decoder: decoder, completionHandler: { response in
                 logger?.verbose((response.response?.statusCode, response.request))

@@ -11,7 +11,7 @@ import Reusable
 import UIKit
 
 class MovieListTableViewCell: UITableViewCell, Reusable {
-    @IBOutlet var posterImageView: UIImageView!
+    @IBOutlet private var posterImageView: UIImageView!
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var ratingLabel: UILabel!
     @IBOutlet private var totalVoteLabel: UILabel!
@@ -26,9 +26,9 @@ class MovieListTableViewCell: UITableViewCell, Reusable {
 
             posterImageView.backgroundColor = UIColor.random()
             titleLabel.text = movie.title
-            ratingLabel.text = "\(movie.voteAverage)"
-            totalVoteLabel.text = "\(movie.totalVotes)"
-            releaseDateLabel.text = movie.releaseDate
+            ratingLabel.text = String(format: "%.1f", movie.voteAverage)
+            totalVoteLabel.text = String(format: "%.0f votes", movie.totalVotes)
+            releaseDateLabel.text = movie.releaseDate.toString(format: .isoYear)
         }
     }
 

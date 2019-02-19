@@ -27,10 +27,3 @@ struct MovieList: Decodable {
         case movies = "results"
     }
 }
-
-// {
-//    "page": 1,
-//    "total_results": 6910,
-//    "total_pages": 346,
-//    "results": [...]
-// }

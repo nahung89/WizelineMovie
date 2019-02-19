@@ -22,12 +22,14 @@ internal enum StoryboardScene {
 
     internal static let initialScene = InitialSceneType<UIKit.UITabBarController>(storyboard: Main.self)
   }
-  internal enum MovieList: StoryboardType {
-    internal static let storyboardName = "MovieList"
+  internal enum Movie: StoryboardType {
+    internal static let storyboardName = "Movie"
 
-    internal static let initialScene = InitialSceneType<UIKit.UINavigationController>(storyboard: MovieList.self)
+    internal static let initialScene = InitialSceneType<UIKit.UINavigationController>(storyboard: Movie.self)
 
-    internal static let movieListViewController = SceneType<Challenge.MovieListViewController>(storyboard: MovieList.self, identifier: "MovieListViewController")
+    internal static let movieDetailViewController = SceneType<Challenge.MovieDetailViewController>(storyboard: Movie.self, identifier: "MovieDetailViewController")
+
+    internal static let movieListViewController = SceneType<Challenge.MovieListViewController>(storyboard: Movie.self, identifier: "MovieListViewController")
   }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name

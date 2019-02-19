@@ -13,10 +13,11 @@ class MovieListRepository {
     let apiState: Variable<APIState> = Variable(.stop)
     let type: MovieList.DataType
 
-    private var movieList: MovieList?
     private(set) var movies: [Movie] = []
 
+    private var totalPage: Int = .max
     private var currentPage: Int = 0
+
     private var request: Disposable?
     private let disposeBag = DisposeBag()
 
@@ -38,8 +39,10 @@ class MovieListRepository {
 private extension MovieListRepository {
     func clear() {
         currentPage = 0
+        totalPage = .max
         movies = []
         apiState.value = .stop
+        request?.dispose()
     }
 
     func fetch() {
@@ -61,15 +64,13 @@ private extension MovieListRepository {
     }
 
     func bind(_ result: MovieList) {
-        movieList = result
         currentPage = result.page
+        totalPage = result.totalPages
         movies.append(contentsOf: result.movies)
     }
 
     func makeAPI() -> MovieAPI? {
-        let maxPage = movieList?.totalPages ?? Int.max
-
-        guard currentPage < maxPage else { return nil }
+        guard currentPage < totalPage else { return nil }
 
         let nextPage = currentPage + 1
         switch type {
