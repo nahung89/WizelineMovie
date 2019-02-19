@@ -13,6 +13,12 @@ import Foundation
 internal enum L10n {
   /// Error
   internal static let error = L10n.tr("Localizable", "ERROR")
+  /// WizeMovie
+  internal static let mainTitle = L10n.tr("Localizable", "MAIN_TITLE")
+  /// Now Playing
+  internal static let nowPlayingBar = L10n.tr("Localizable", "NOW_PLAYING_BAR")
+  /// Top Rated
+  internal static let topRateBar = L10n.tr("Localizable", "TOP_RATE_BAR")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

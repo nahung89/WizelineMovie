@@ -16,12 +16,24 @@ typealias CoordinatorPresentable = (coordinator: CoordinatorType, presentable: P
 
 final class CoordinatorFactory {
     static func makeMainCoordinator() -> CoordinatorPresentable {
-        let router = NavigationRouter(rootController: StoryboardScene.Main.initialScene.instantiate())
+        let router = TabbarRouter(rootController: StoryboardScene.Main.initialScene.instantiate())
         let coordinator = MainCoordinator(router: router)
         return (coordinator, router)
     }
 
+    static func makeTopRateMoviesCoordinator() -> CoordinatorPresentable {
+        let router = NavigationRouter(rootController: StoryboardScene.Movie.initialScene.instantiate())
+        let coordinator = MovieCoordinator(router: router, type: .topRate)
+        return (coordinator, router)
+    }
+
+    static func makeNowPlayingMoviesCoordinator() -> CoordinatorPresentable {
+        let router = NavigationRouter(rootController: StoryboardScene.Movie.initialScene.instantiate())
+        let coordinator = MovieCoordinator(router: router, type: .nowPlaying)
+        return (coordinator, router)
+    }
+
     static func makeErrorAlertCoordinator(title: String?, error: Error) -> CoordinatorType {
-        return AlertCoordinator(value: .error(title, error))
+        return AlertCoordinator(title: title, error: error)
     }
 }

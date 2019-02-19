@@ -10,7 +10,9 @@ import Alamofire
 import Foundation
 
 enum MovieAPI {
-    case getTopRatedMovies
+    case getTopRatedMovies(page: Int)
+    case getNowPlayingMovies(page: Int)
+    case getDetailMovie(id: Int)
 
     private enum Const {
         static let BaseURLPath = "https://api.themoviedb.org/3"
@@ -26,21 +28,30 @@ extension MovieAPI: APIEndpoint {
     var path: String {
         switch self {
         case .getTopRatedMovies:
-            return "movie/top_rated"
+            return "/movie/top_rated"
+        case .getNowPlayingMovies:
+            return "/movie/now_playing"
+        case let .getDetailMovie(id):
+            return "/movie/\(id)"
         }
     }
 
     var method: HTTPMethod {
         switch self {
-        case .getTopRatedMovies:
+        case .getTopRatedMovies,
+             .getNowPlayingMovies,
+             .getDetailMovie:
             return .get
         }
     }
 
     var parameters: Parameters? {
-        let params: Parameters = ["api_key": Const.Key]
+        var params: Parameters = ["api_key": Const.Key]
         switch self {
-        case .getTopRatedMovies:
+        case let .getNowPlayingMovies(page),
+             let .getTopRatedMovies(page):
+            params["page"] = page
+        default:
             break
         }
         return params
@@ -48,5 +59,19 @@ extension MovieAPI: APIEndpoint {
 
     var parameterEncoding: ParameterEncoding? {
         return nil
+    }
+
+    var jsonDecoder: JSONDecoder {
+        let decoder = JSONDecoder()
+        switch self {
+        case .getTopRatedMovies,
+             .getNowPlayingMovies,
+             .getDetailMovie:
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            decoder.dateDecodingStrategy = .formatted(dateFormatter)
+        }
+
+        return decoder
     }
 }

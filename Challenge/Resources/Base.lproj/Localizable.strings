@@ -1,2 +1,11 @@
 /* Error */
 "ERROR" = "Error";
+
+/* Now Playing */
+"NOW_PLAYING_BAR" = "Now Playing";
+
+/* Top Rated */
+"TOP_RATE_BAR" = "Top Rated";
+
+/* WizeMovie */
+"MAIN_TITLE" = "WizeMovie";

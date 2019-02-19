@@ -1,5 +1,5 @@
 //
-//  MovieListViewController.swift
+//  MovieDetailViewController.swift
 //  Challenge
 //
 //  Created by Nah on 2/19/19.
@@ -11,25 +11,22 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-protocol MovieListViewType: ErrorActionable {
-    var onMovieSelect: ((_ movie: Movie) -> Void)? { get set }
-}
+protocol MovieDetailViewType: ErrorActionable {}
 
-typealias MovieListViewControllerDependency = MovieListViewController.Dependency
-extension MovieListViewController {
+typealias MovieDetailViewControllerDependency = MovieDetailViewController.Dependency
+extension MovieDetailViewController {
     struct Dependency {
-        let viewModel: MovieListViewModel
+        let viewModel: MovieDetailViewModel
     }
 }
 
-class MovieListViewController: BaseViewController, MovieListViewType {
+class MovieDetailViewController: BaseViewController, MovieDetailViewType {
     var onErrorReceive: ((_ title: String?, _ error: Error) -> Void)?
-    var onMovieSelect: ((_ movie: Movie) -> Void)?
 
     @IBOutlet private var tableView: UITableView!
     private let refreshControl = UIRefreshControl()
 
-    private var viewModel: MovieListViewModel!
+    private var viewModel: MovieDetailViewModel!
     private let disposeBag = DisposeBag()
 
     // MARK: - View Cycle
@@ -61,16 +58,6 @@ class MovieListViewController: BaseViewController, MovieListViewType {
             .bind(to: viewModel.onRefresh)
             .disposed(by: disposeBag)
 
-        tableView.rx.contentOffset
-            .skip(1)
-            .filter { [unowned self] offset in
-                guard self.tableView.contentSize.height > 0 else { return false }
-                return offset.y + 300 >= self.tableView.contentSize.height - self.tableView.bounds.height
-            }
-            .map { _ in () }
-            .bind(to: viewModel.onLoadMore)
-            .disposed(by: disposeBag)
-
         viewModel.viewState
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] state in
@@ -92,27 +79,35 @@ class MovieListViewController: BaseViewController, MovieListViewType {
     }
 }
 
-extension MovieListViewController: UITableViewDataSource, UITableViewDelegate {
+extension MovieDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.movies.count
+        return 3
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MovieListTableViewCell.self)
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MovieDetailBackdropTableViewCell.self)
+            cell.movie = viewModel.movieDetail
+            return cell
 
-        guard let movie = viewModel.movies.get(at: indexPath.row) else { return cell }
-        cell.movie = movie
-        return cell
-    }
+        case 1:
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MovieDetailBaseInfoTableViewCell.self)
+            cell.movie = viewModel.movieDetail
+            return cell
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        defer { tableView.deselectRow(at: indexPath, animated: true) }
+        case 2:
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MovieDetailSumaryTableViewCell.self)
+            cell.movie = viewModel.movieDetail
+            return cell
 
-        guard
-            let cell = tableView.cellForRow(at: indexPath) as? MovieListTableViewCell,
-            let movie = cell.movie
-            else { return }
-
-        onMovieSelect?(movie)
+        default:
+            assertionFailure("out of range")
+            return UITableViewCell()
+        }
     }
 }

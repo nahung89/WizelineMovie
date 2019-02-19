@@ -10,32 +10,74 @@ import Foundation
 import RxSwift
 
 class MovieListRepository {
-    let apiState: BehaviorSubject<APIState> = BehaviorSubject(value: .stop)
+    let apiState: Variable<APIState> = Variable(.stop)
+    let type: MovieList.DataType
 
-    private var movieList: MovieList?
     private(set) var movies: [Movie] = []
+
+    private var totalPage: Int = .max
+    private var currentPage: Int = 0
 
     private var request: Disposable?
     private let disposeBag = DisposeBag()
 
-    func fetch() {
-        request?.dispose()
-        apiState.onNext(.request)
+    init(dataType: MovieList.DataType) {
+        type = dataType
+    }
 
-        request = MovieAPI.getTopRatedMovies
+    func refresh() {
+        clear()
+        fetch()
+    }
+
+    func fetchNext() {
+        guard !apiState.value.isRequest else { return }
+        fetch()
+    }
+}
+
+private extension MovieListRepository {
+    func clear() {
+        currentPage = 0
+        totalPage = .max
+        movies = []
+        apiState.value = .stop
+        request?.dispose()
+    }
+
+    func fetch() {
+        guard let api = makeAPI() else { return }
+
+        request?.dispose()
+        apiState.value = .request
+
+        request = api
             .response(MovieList.self)
             .subscribe(onNext: { [unowned self] result in
                 self.bind(result)
-                self.apiState.onNext(.response)
+                self.apiState.value = .response
             }, onError: { [unowned self] error in
-                self.apiState.onNext(.fail(error))
+                self.apiState.value = .fail(error)
             })
 
         request?.disposed(by: disposeBag)
     }
 
-    private func bind(_ result: MovieList) {
-        movieList = result
+    func bind(_ result: MovieList) {
+        currentPage = result.page
+        totalPage = result.totalPages
         movies.append(contentsOf: result.movies)
+    }
+
+    func makeAPI() -> MovieAPI? {
+        guard currentPage < totalPage else { return nil }
+
+        let nextPage = currentPage + 1
+        switch type {
+        case .nowPlaying:
+            return .getNowPlayingMovies(page: nextPage)
+        case .topRate:
+            return .getTopRatedMovies(page: nextPage)
+        }
     }
 }
