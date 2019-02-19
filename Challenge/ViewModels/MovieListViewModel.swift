@@ -18,8 +18,8 @@ extension MovieListViewModel {
 
 class MovieListViewModel {
     let viewState: BehaviorSubject<ViewState> = BehaviorSubject(value: .blank)
-    let onRefresh: PublishSubject<Void?> = PublishSubject()
-    let onLoadMore: PublishSubject<Void?> = PublishSubject()
+    let onRefresh: PublishSubject<Void> = PublishSubject()
+    let onLoadMore: PublishSubject<Void> = PublishSubject()
 
     private(set) var movies: [Movie] = []
 
@@ -30,10 +30,14 @@ class MovieListViewModel {
         repository = dependency.repository
 
         onRefresh.subscribe(onNext: { [unowned self] _ in
-            self.repository.fetch()
+            self.refresh()
         }).disposed(by: disposeBag)
 
-        repository.apiState
+        onLoadMore.subscribe(onNext: { [unowned self] _ in
+            self.loadMore()
+        }).disposed(by: disposeBag)
+
+        repository.apiState.asObservable()
             .map({ ViewState($0) })
             .do(onNext: { [unowned self] viewState in
                 guard viewState == .working else { return }
@@ -44,6 +48,10 @@ class MovieListViewModel {
     }
 
     func refresh() {
-        repository.fetch()
+        repository.refresh()
+    }
+
+    func loadMore() {
+        repository.fetchNext()
     }
 }

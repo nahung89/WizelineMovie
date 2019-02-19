@@ -50,7 +50,7 @@ extension APIEndpoint {
 
     func response<T: Decodable>(_ type: T.Type) -> Observable<T> {
         return Alamofire.request(self)
-            .validate(statusCode: 200 ... 299)
+            .validate()
             .rx.responseEntity(type)
     }
 }

@@ -10,7 +10,8 @@ import Alamofire
 import Foundation
 
 enum MovieAPI {
-    case getTopRatedMovies
+    case getTopRatedMovies(page: Int)
+    case getNowPlayingMovies(page: Int)
 
     private enum Const {
         static let BaseURLPath = "https://api.themoviedb.org/3"
@@ -27,6 +28,8 @@ extension MovieAPI: APIEndpoint {
         switch self {
         case .getTopRatedMovies:
             return "movie/top_rated"
+        case .getNowPlayingMovies:
+            return "movie/now_playing"
         }
     }
 
@@ -34,14 +37,17 @@ extension MovieAPI: APIEndpoint {
         switch self {
         case .getTopRatedMovies:
             return .get
+        case .getNowPlayingMovies:
+            return .get
         }
     }
 
     var parameters: Parameters? {
-        let params: Parameters = ["api_key": Const.Key]
+        var params: Parameters = ["api_key": Const.Key]
         switch self {
-        case .getTopRatedMovies:
-            break
+        case let .getNowPlayingMovies(page),
+             let .getTopRatedMovies(page):
+            params["page"] = page
         }
         return params
     }

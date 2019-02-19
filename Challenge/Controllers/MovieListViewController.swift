@@ -11,7 +11,9 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-protocol MovieListViewType: ErrorActionable {}
+protocol MovieListViewType: ErrorActionable {
+    var onMovieSelect: ((_ movie: Movie) -> Void)? { get set }
+}
 
 typealias MovieListViewControllerDependency = MovieListViewController.Dependency
 extension MovieListViewController {
@@ -22,6 +24,7 @@ extension MovieListViewController {
 
 class MovieListViewController: BaseViewController, MovieListViewType {
     var onErrorReceive: ((_ title: String?, _ error: Error) -> Void)?
+    var onMovieSelect: ((_ movie: Movie) -> Void)?
 
     @IBOutlet private var tableView: UITableView!
     private let refreshControl = UIRefreshControl()
@@ -46,6 +49,7 @@ class MovieListViewController: BaseViewController, MovieListViewType {
     }
 
     private func setupUI() {
+        navigationItem.title = L10n.mainTitle
         view.backgroundColor = UIColor.random()
         tableView.addSubview(refreshControl)
     }
@@ -56,6 +60,15 @@ class MovieListViewController: BaseViewController, MovieListViewType {
         refreshControl.rx.controlEvent(.valueChanged)
             .filter({ [unowned self] in self.refreshControl.isRefreshing })
             .bind(to: viewModel.onRefresh)
+            .disposed(by: disposeBag)
+
+        tableView.rx.contentOffset
+            .skip(1)
+            .filter { [unowned self] offset in
+                offset.y + 300 >= self.tableView.contentSize.height - self.tableView.bounds.height
+            }
+            .map { _ in () }
+            .bind(to: viewModel.onLoadMore)
             .disposed(by: disposeBag)
 
         viewModel.viewState
@@ -88,7 +101,18 @@ extension MovieListViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MovieListTableViewCell.self)
 
         guard let movie = viewModel.movies.get(at: indexPath.row) else { return cell }
-        cell.textLabel?.text = movie.title
+        cell.movie = movie
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        defer { tableView.deselectRow(at: indexPath, animated: true) }
+
+        guard
+            let cell = tableView.cellForRow(at: indexPath) as? MovieListTableViewCell,
+            let movie = cell.movie
+            else { return }
+
+        onMovieSelect?(movie)
     }
 }

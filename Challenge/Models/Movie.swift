@@ -13,8 +13,8 @@ struct Movie: Decodable {
     let title: String
     let voteAverage: Double
     let totalVotes: Double
-    let posterPath: String
-    let backdropPath: String
+    let posterPath: String?; #warning("Update to `URL`")
+    let backdropPath: String?; #warning("Update to `URL`")
     let overview: String
     let releaseDate: String; #warning("Update to `DateTime`")
 

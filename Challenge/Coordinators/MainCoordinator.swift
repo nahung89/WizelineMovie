@@ -7,21 +7,32 @@
 //
 
 import Foundation
+import RxSwift
 
-class MainCoordinator: Coordinator, CoordinatorErrorable {
-    private let router: NavigationRouterType
+class MainCoordinator: Coordinator {
+    private let router: TabbarRouterType
+    private let disposeBag = DisposeBag()
 
-    init(router: NavigationRouterType) {
+    init(router: TabbarRouterType) {
         self.router = router
+        super.init()
     }
 
     override func start(_ option: DeepLinkOption?) {
-        let controller = ControllerFactory.makeListMoviePresentable()
+        let factory = CoordinatorFactory.self
+        let instances = [factory.makeTopRateMoviesCoordinator(),
+                         factory.makeNowPlayingMoviesCoordinator()]
 
-        controller.onErrorReceive = { [weak self] title, error in
-            self?.openAlert(title: title, error: error)
+        // Assign `viewControllers` will make `viewDidLoad` run automatically
+        router.setModules(instances.map({ $0.presentable }), animated: false)
+
+        // Only start each coordinator after its presentable is in `tabBarController`
+        for coordinator in instances.map({ $0.coordinator }) {
+            coordinator.finishCallback = { [unowned self] caller in
+                self.removeDependency(caller)
+            }
+            addDependency(coordinator)
+            coordinator.start()
         }
-
-        router.setRootModule(controller, animated: false)
     }
 }
