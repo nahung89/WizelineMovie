@@ -9,13 +9,13 @@
 import Foundation
 
 final class ControllerFactory {
-    static func makeSamplePresentable() -> ViewControllerType {
-        let repository = SampleRepository()
-        let viewModelDependency = SampleViewModelDependency(repository: repository)
-        let viewModel = SampleViewModel(viewModelDependency)
-        let dependency = SampleViewControllerDependency(viewModel: viewModel)
+    static func makeListMoviePresentable() -> MovieListViewType {
+        let repository = MovieListRepository()
+        let viewModelDependency = MovieListViewModelDependency(repository: repository)
+        let viewModel = MovieListViewModel(viewModelDependency)
+        let dependency = MovieListViewControllerDependency(viewModel: viewModel)
 
-        let controller = StoryboardScene.Main.sampleViewController.instantiate()
+        let controller = StoryboardScene.Main.movieListViewController.instantiate()
         controller.inject(dependency)
         return controller
     }

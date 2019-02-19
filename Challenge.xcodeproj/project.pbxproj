@@ -13,7 +13,6 @@
 		11153AC8221880230064F116 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11153AC0221880230064F116 /* Assets.xcassets */; };
 		11153ACA221880230064F116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11153AC4221880230064F116 /* LaunchScreen.storyboard */; };
 		11153ACB221880230064F116 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11153AC5221880230064F116 /* Main.storyboard */; };
-		11153ACC221880230064F116 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11153AC7221880230064F116 /* SampleViewController.swift */; };
 		11153AE2221884900064F116 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153ADB2218848F0064F116 /* RxSwift.framework */; };
 		11153AE3221884900064F116 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153ADC221884900064F116 /* SwiftyJSON.framework */; };
 		11153AE4221884900064F116 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153ADD221884900064F116 /* Alamofire.framework */; };
@@ -49,15 +48,17 @@
 		11488D49221B019A00D07D69 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D48221B019A00D07D69 /* Strings.swift */; };
 		11488D4C221B048400D07D69 /* DataRequest+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D4A221B048400D07D69 /* DataRequest+Ext.swift */; };
 		11488D4D221B048400D07D69 /* SessionManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D4B221B048400D07D69 /* SessionManager+Ext.swift */; };
-		11488D51221B04D000D07D69 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D4F221B04D000D07D69 /* Recipe.swift */; };
-		11488D52221B04D000D07D69 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D50221B04D000D07D69 /* Recipes.swift */; };
-		11488D56221B051800D07D69 /* SampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D54221B051800D07D69 /* SampleViewModel.swift */; };
 		11488D57221B051800D07D69 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D55221B051800D07D69 /* ViewState.swift */; };
-		11488D5F221B057900D07D69 /* SampleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D5A221B057900D07D69 /* SampleRepository.swift */; };
 		11488D61221B057900D07D69 /* APIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D5C221B057900D07D69 /* APIState.swift */; };
-		11488D62221B057900D07D69 /* FoodAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D5D221B057900D07D69 /* FoodAPI.swift */; };
+		11488D62221B057900D07D69 /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D5D221B057900D07D69 /* MovieAPI.swift */; };
 		11488D63221B057900D07D69 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D5E221B057900D07D69 /* APIEndpoint.swift */; };
-		11488D66221B099400D07D69 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D65221B099400D07D69 /* RecipeCell.swift */; };
+		1198EAF2221B93AF00A1C625 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1198EAF1221B93AF00A1C625 /* Movie.swift */; };
+		1198EAF4221B95C700A1C625 /* MovieListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1198EAF3221B95C700A1C625 /* MovieListRepository.swift */; };
+		1198EAF6221B95EC00A1C625 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1198EAF5221B95EC00A1C625 /* MovieList.swift */; };
+		1198EAF8221B979A00A1C625 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1198EAF7221B979A00A1C625 /* MovieListViewModel.swift */; };
+		1198EAFA221B983A00A1C625 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1198EAF9221B983A00A1C625 /* MovieListViewController.swift */; };
+		1198EAFC221B98EF00A1C625 /* MovieListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1198EAFB221B98EF00A1C625 /* MovieListTableViewCell.swift */; };
+		1198EAFE221B9B1800A1C625 /* ChallengeModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1198EAFD221B9B1800A1C625 /* ChallengeModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +91,6 @@
 		11153AC2221880230064F116 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11153AC4221880230064F116 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11153AC5221880230064F116 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		11153AC7221880230064F116 /* SampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		11153ADB2218848F0064F116 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		11153ADC221884900064F116 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		11153ADD221884900064F116 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -127,15 +127,17 @@
 		11488D48221B019A00D07D69 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Challenge/Generated/Strings.swift; sourceTree = SOURCE_ROOT; };
 		11488D4A221B048400D07D69 /* DataRequest+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataRequest+Ext.swift"; sourceTree = "<group>"; };
 		11488D4B221B048400D07D69 /* SessionManager+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SessionManager+Ext.swift"; sourceTree = "<group>"; };
-		11488D4F221B04D000D07D69 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
-		11488D50221B04D000D07D69 /* Recipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
-		11488D54221B051800D07D69 /* SampleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleViewModel.swift; sourceTree = "<group>"; };
 		11488D55221B051800D07D69 /* ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
-		11488D5A221B057900D07D69 /* SampleRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleRepository.swift; sourceTree = "<group>"; };
 		11488D5C221B057900D07D69 /* APIState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIState.swift; sourceTree = "<group>"; };
-		11488D5D221B057900D07D69 /* FoodAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodAPI.swift; sourceTree = "<group>"; };
+		11488D5D221B057900D07D69 /* MovieAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
 		11488D5E221B057900D07D69 /* APIEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
-		11488D65221B099400D07D69 /* RecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		1198EAF1221B93AF00A1C625 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		1198EAF3221B95C700A1C625 /* MovieListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListRepository.swift; sourceTree = "<group>"; };
+		1198EAF5221B95EC00A1C625 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
+		1198EAF7221B979A00A1C625 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
+		1198EAF9221B983A00A1C625 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
+		1198EAFB221B98EF00A1C625 /* MovieListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewCell.swift; sourceTree = "<group>"; };
+		1198EAFD221B9B1800A1C625 /* ChallengeModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				11153A9A22187CB00064F116 /* ChallengeTests.swift */,
+				1198EAFD221B9B1800A1C625 /* ChallengeModelTests.swift */,
 				11153A9C22187CB00064F116 /* Info.plist */,
 			);
 			path = ChallengeTests;
@@ -263,7 +266,7 @@
 				11488D38221AFD5200D07D69 /* ControllerFactory.swift */,
 				11488D3A221AFD9900D07D69 /* ControllerProtocols.swift */,
 				11488D46221AFFC000D07D69 /* BaseViewController.swift */,
-				11153AC7221880230064F116 /* SampleViewController.swift */,
+				1198EAF9221B983A00A1C625 /* MovieListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -360,8 +363,8 @@
 		11488D4E221B049F00D07D69 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				11488D4F221B04D000D07D69 /* Recipe.swift */,
-				11488D50221B04D000D07D69 /* Recipes.swift */,
+				1198EAF5221B95EC00A1C625 /* MovieList.swift */,
+				1198EAF1221B93AF00A1C625 /* Movie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -370,7 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				11488D55221B051800D07D69 /* ViewState.swift */,
-				11488D54221B051800D07D69 /* SampleViewModel.swift */,
+				1198EAF7221B979A00A1C625 /* MovieListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -380,7 +383,7 @@
 			children = (
 				11488D5C221B057900D07D69 /* APIState.swift */,
 				11488D5E221B057900D07D69 /* APIEndpoint.swift */,
-				11488D5D221B057900D07D69 /* FoodAPI.swift */,
+				11488D5D221B057900D07D69 /* MovieAPI.swift */,
 				11488D59221B057900D07D69 /* Repositories */,
 			);
 			path = Networking;
@@ -389,7 +392,7 @@
 		11488D59221B057900D07D69 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				11488D5A221B057900D07D69 /* SampleRepository.swift */,
+				1198EAF3221B95C700A1C625 /* MovieListRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -397,7 +400,7 @@
 		11488D64221B099400D07D69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				11488D65221B099400D07D69 /* RecipeCell.swift */,
+				1198EAFB221B98EF00A1C625 /* MovieListTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -551,7 +554,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"SwiftFormat is disabled.\"; exit 0\n\nif which swiftformat >/dev/null; then\nswiftformat \"${SRCROOT}/$PROJECT_NAME\" --config \"${SRCROOT}/.swiftformat\"\nswiftformat \"${SRCROOT}/ChallengeTests\" --config \"${SRCROOT}/.swiftformat\"\nswiftformat \"${SRCROOT}/ChallengeUITests\" --config \"${SRCROOT}/.swiftformat\"\nelse\necho \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+			shellScript = "# echo \"SwiftFormat is disabled.\"; exit 0\n\nif which swiftformat >/dev/null; then\nswiftformat \"${SRCROOT}/$PROJECT_NAME\" --config \"${SRCROOT}/.swiftformat\"\nswiftformat \"${SRCROOT}/ChallengeTests\" --config \"${SRCROOT}/.swiftformat\"\nswiftformat \"${SRCROOT}/ChallengeUITests\" --config \"${SRCROOT}/.swiftformat\"\nelse\necho \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
 		};
 		11153AB422187DAD0064F116 /* Run Script - SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -630,9 +633,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1198EAF2221B93AF00A1C625 /* Movie.swift in Sources */,
 				11488D41221AFEDC00D07D69 /* StoryboardsScenes.swift in Sources */,
+				1198EAF4221B95C700A1C625 /* MovieListRepository.swift in Sources */,
 				11488CE22218EE2000D07D69 /* NameDescribable.swift in Sources */,
-				11488D62221B057900D07D69 /* FoodAPI.swift in Sources */,
+				11488D62221B057900D07D69 /* MovieAPI.swift in Sources */,
+				1198EAFC221B98EF00A1C625 /* MovieListTableViewCell.swift in Sources */,
 				11488D61221B057900D07D69 /* APIState.swift in Sources */,
 				11488CD42218EB8B00D07D69 /* TabbarRouter.swift in Sources */,
 				11488D31221AFC6A00D07D69 /* AppCoordinator.swift in Sources */,
@@ -644,27 +650,24 @@
 				11488D45221AFF5A00D07D69 /* UIColor+Ext.swift in Sources */,
 				11488D39221AFD5200D07D69 /* ControllerFactory.swift in Sources */,
 				11488D49221B019A00D07D69 /* Strings.swift in Sources */,
-				11488D56221B051800D07D69 /* SampleViewModel.swift in Sources */,
 				11488CD12218EB8B00D07D69 /* DeepLinkOption.swift in Sources */,
 				11488CDB2218EC4F00D07D69 /* XCGLogger+Ext.swift in Sources */,
 				11488D63221B057900D07D69 /* APIEndpoint.swift in Sources */,
 				11488CD52218EB8B00D07D69 /* Coordinator.swift in Sources */,
 				11488D47221AFFC000D07D69 /* BaseViewController.swift in Sources */,
+				1198EAF6221B95EC00A1C625 /* MovieList.swift in Sources */,
 				11488D3D221AFE2300D07D69 /* CoordinatorProtocols.swift in Sources */,
 				11488CD72218EBF200D07D69 /* AppDelegate+Config.swift in Sources */,
-				11153ACC221880230064F116 /* SampleViewController.swift in Sources */,
+				1198EAF8221B979A00A1C625 /* MovieListViewModel.swift in Sources */,
 				11488D37221AFD2500D07D69 /* AlertCoordinator.swift in Sources */,
 				11153A8622187CAE0064F116 /* AppDelegate.swift in Sources */,
 				11488D35221AFCF800D07D69 /* MainCoordinator.swift in Sources */,
 				11488CE62218EF3700D07D69 /* Array+Ext.swift in Sources */,
 				11488D4D221B048400D07D69 /* SessionManager+Ext.swift in Sources */,
-				11488D51221B04D000D07D69 /* Recipe.swift in Sources */,
 				11488D33221AFCD800D07D69 /* CoordinatorFactory.swift in Sources */,
-				11488D5F221B057900D07D69 /* SampleRepository.swift in Sources */,
-				11488D66221B099400D07D69 /* RecipeCell.swift in Sources */,
-				11488D52221B04D000D07D69 /* Recipes.swift in Sources */,
 				11488CD22218EB8B00D07D69 /* Presentable.swift in Sources */,
 				11488D3F221AFECA00D07D69 /* AssetsImages.swift in Sources */,
+				1198EAFA221B983A00A1C625 /* MovieListViewController.swift in Sources */,
 				11488CDD2218ECBC00D07D69 /* Const.swift in Sources */,
 				11488D43221AFF1B00D07D69 /* Optional+Ext.swift in Sources */,
 			);
@@ -675,6 +678,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11153A9B22187CB00064F116 /* ChallengeTests.swift in Sources */,
+				1198EAFE221B9B1800A1C625 /* ChallengeModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

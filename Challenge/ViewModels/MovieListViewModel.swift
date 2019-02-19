@@ -1,29 +1,29 @@
 //
-//  RecipeListViewModel.swift
+//  MovieListViewModel.swift
 //  Challenge
 //
-//  Created by Nah on 2/17/19.
+//  Created by Nah on 2/19/19.
 //  Copyright © 2019 Nah. All rights reserved.
 //
 
-import Alamofire
 import Foundation
 import RxSwift
 
-typealias SampleViewModelDependency = SampleViewModel.Dependency
-extension SampleViewModel {
+typealias MovieListViewModelDependency = MovieListViewModel.Dependency
+extension MovieListViewModel {
     struct Dependency {
-        let repository: SampleRepository
+        let repository: MovieListRepository
     }
 }
 
-class SampleViewModel {
+class MovieListViewModel {
     let viewState: BehaviorSubject<ViewState> = BehaviorSubject(value: .blank)
     let onRefresh: PublishSubject<Void?> = PublishSubject()
+    let onLoadMore: PublishSubject<Void?> = PublishSubject()
 
-    private(set) var recipes: [Recipe] = []
+    private(set) var movies: [Movie] = []
 
-    private let repository: SampleRepository
+    private let repository: MovieListRepository
     private let disposeBag = DisposeBag()
 
     init(_ dependency: Dependency) {
@@ -37,7 +37,7 @@ class SampleViewModel {
             .map({ ViewState($0) })
             .do(onNext: { [unowned self] viewState in
                 guard viewState == .working else { return }
-                self.recipes = self.repository.recipes
+                self.movies = self.repository.movies
             })
             .bind(to: viewState)
             .disposed(by: disposeBag)

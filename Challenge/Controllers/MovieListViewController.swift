@@ -1,31 +1,32 @@
 //
-//  ViewController.swift
+//  MovieListViewController.swift
 //  Challenge
 //
-//  Created by Nah on 2/17/19.
+//  Created by Nah on 2/19/19.
 //  Copyright © 2019 Nah. All rights reserved.
 //
 
+import Foundation
 import RxCocoa
 import RxSwift
 import UIKit
 
-protocol ViewControllerType: ErrorActionable {}
+protocol MovieListViewType: ErrorActionable {}
 
-typealias SampleViewControllerDependency = SampleViewController.Dependency
-extension SampleViewController {
+typealias MovieListViewControllerDependency = MovieListViewController.Dependency
+extension MovieListViewController {
     struct Dependency {
-        let viewModel: SampleViewModel
+        let viewModel: MovieListViewModel
     }
 }
 
-class SampleViewController: BaseViewController, ViewControllerType {
+class MovieListViewController: BaseViewController, MovieListViewType {
     var onErrorReceive: ((_ title: String?, _ error: Error) -> Void)?
 
     @IBOutlet private var tableView: UITableView!
     private let refreshControl = UIRefreshControl()
 
-    private var viewModel: SampleViewModel!
+    private var viewModel: MovieListViewModel!
     private let disposeBag = DisposeBag()
 
     // MARK: - View Cycle
@@ -47,7 +48,6 @@ class SampleViewController: BaseViewController, ViewControllerType {
     private func setupUI() {
         view.backgroundColor = UIColor.random()
         tableView.addSubview(refreshControl)
-        tableView.register(RecipeCell.self, forCellReuseIdentifier: RecipeCell.typeName)
     }
 
     private func setupBinding() {
@@ -79,16 +79,16 @@ class SampleViewController: BaseViewController, ViewControllerType {
     }
 }
 
-extension SampleViewController: UITableViewDataSource, UITableViewDelegate {
+extension MovieListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.recipes.count
+        return viewModel.movies.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: RecipeCell.self)
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MovieListTableViewCell.self)
 
-        guard let recipe = viewModel.recipes.get(at: indexPath.row) else { return cell }
-        cell.textLabel?.text = recipe.title
+        guard let movie = viewModel.movies.get(at: indexPath.row) else { return cell }
+        cell.textLabel?.text = movie.title
         return cell
     }
 }
