@@ -10,7 +10,7 @@ import Foundation
 import Reusable
 import UIKit
 
-class MovieDetailCastTableViewCell: UITableViewCell, Reusable {
+class MovieDetailCastTableViewCell: UITableViewCell, Reusable, ViewSuspendable {
     @IBOutlet private var castItemA: MovieDetailCastTableViewCellCastItem!
     @IBOutlet private var castItemB: MovieDetailCastTableViewCellCastItem!
     @IBOutlet private var castItemC: MovieDetailCastTableViewCellCastItem!
@@ -30,9 +30,13 @@ class MovieDetailCastTableViewCell: UITableViewCell, Reusable {
             }
         }
     }
+
+    func suspend() {
+        [castItemA, castItemB, castItemC, castItemD].forEach({ $0?.suspend() })
+    }
 }
 
-class MovieDetailCastTableViewCellCastItem: UIView {
+class MovieDetailCastTableViewCellCastItem: UIView, ViewSuspendable {
     @IBOutlet private var profileImageView: UIImageView!
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var characterLabel: UILabel!
@@ -54,5 +58,9 @@ class MovieDetailCastTableViewCellCastItem: UIView {
         profileImageView.image = nil
         nameLabel.text = ""
         characterLabel.text = ""
+    }
+
+    func suspend() {
+        profileImageView.kf.cancelDownloadTask()
     }
 }

@@ -11,12 +11,16 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
+  /// Cast & Crews
+  internal static let castAndCrews = L10n.tr("Localizable", "CAST_AND_CREWS")
   /// Done
   internal static let done = L10n.tr("Localizable", "DONE")
   /// Error
   internal static let error = L10n.tr("Localizable", "ERROR")
   /// Now Playing
   internal static let nowPlaying = L10n.tr("Localizable", "NOW_PLAYING")
+  /// See all
+  internal static let seeAll = L10n.tr("Localizable", "SEE_ALL")
   /// Top Rated
   internal static let topRated = L10n.tr("Localizable", "TOP_RATED")
   /// vote

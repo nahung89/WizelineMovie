@@ -36,4 +36,15 @@ final class ControllerFactory {
 
         return controller
     }
+
+    static func makeCastAndCrewPresentable(detail: MovieDetail, credits: MovieCredits) -> CastAndCrewViewType {
+        let viewModelDependency = CastAndCrewViewModelDependency(detail: detail, credits: credits)
+        let viewModel = CastAndCrewViewModel(viewModelDependency)
+
+        let dependency = CastAndCrewViewControllerDependency(viewModel: viewModel)
+        let controller = StoryboardScene.Movie.castAndCrewViewController.instantiate()
+        controller.inject(dependency)
+
+        return controller
+    }
 }

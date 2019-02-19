@@ -50,8 +50,9 @@ private extension MovieCoordinator {
         router.push(controller, animated: true, hideBottomBar: true)
     }
 
-    func openCastCrew(_ detai: MovieDetail, credits: MovieCredits) {
-        logger?.warning("Implement")
+    func openCastCrew(_ detail: MovieDetail, credits: MovieCredits) {
+        let controller = ControllerFactory.makeCastAndCrewPresentable(detail: detail, credits: credits)
+        router.push(controller, animated: true, hideBottomBar: true)
     }
 
     func makeBarTitle() -> String {

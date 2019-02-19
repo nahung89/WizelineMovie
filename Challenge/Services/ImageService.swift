@@ -83,7 +83,7 @@ private extension ImageService {
 extension UIImageView {
     func loadOrEmpty(_ path: String?, kind: ImageService.Kind) {
         guard let path = path else {
-            image = nil
+            image = Asset.placeholder.image
             return
         }
 

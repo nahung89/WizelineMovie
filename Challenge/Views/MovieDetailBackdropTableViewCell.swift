@@ -10,7 +10,7 @@ import Foundation
 import Reusable
 import UIKit
 
-class MovieDetailBackdropTableViewCell: UITableViewCell, Reusable {
+class MovieDetailBackdropTableViewCell: UITableViewCell, Reusable, ViewSuspendable {
     @IBOutlet private var backdropImageView: UIImageView!
 
     var movie: MovieDetail? {
@@ -25,5 +25,9 @@ class MovieDetailBackdropTableViewCell: UITableViewCell, Reusable {
 
     private func clear() {
         backdropImageView.image = nil
+    }
+
+    func suspend() {
+        backdropImageView.kf.cancelDownloadTask()
     }
 }

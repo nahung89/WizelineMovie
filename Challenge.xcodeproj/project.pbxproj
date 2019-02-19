@@ -81,6 +81,11 @@
 		11DADD44221C6E96004B92A4 /* MovieDetailDirectorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DADD43221C6E96004B92A4 /* MovieDetailDirectorTableViewCell.swift */; };
 		11DADD46221C7D64004B92A4 /* MovieDetailTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DADD45221C7D64004B92A4 /* MovieDetailTableHeaderView.swift */; };
 		11DADD48221C7E11004B92A4 /* MovieDetailTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11DADD47221C7E11004B92A4 /* MovieDetailTableHeaderView.xib */; };
+		11DADD4A221C84F7004B92A4 /* CastAndCrewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DADD49221C84F7004B92A4 /* CastAndCrewViewModel.swift */; };
+		11DADD4C221C852E004B92A4 /* CastAndCrewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DADD4B221C852E004B92A4 /* CastAndCrewViewController.swift */; };
+		11DADD4E221C9521004B92A4 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DADD4D221C9521004B92A4 /* Person.swift */; };
+		11DADD50221C96E5004B92A4 /* CastAndCrewPeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DADD4F221C96E5004B92A4 /* CastAndCrewPeopleTableViewCell.swift */; };
+		11DADD52221C9E88004B92A4 /* ViewSuspendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DADD51221C9E87004B92A4 /* ViewSuspendable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +186,11 @@
 		11DADD43221C6E96004B92A4 /* MovieDetailDirectorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailDirectorTableViewCell.swift; sourceTree = "<group>"; };
 		11DADD45221C7D64004B92A4 /* MovieDetailTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailTableHeaderView.swift; sourceTree = "<group>"; };
 		11DADD47221C7E11004B92A4 /* MovieDetailTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailTableHeaderView.xib; sourceTree = "<group>"; };
+		11DADD49221C84F7004B92A4 /* CastAndCrewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastAndCrewViewModel.swift; sourceTree = "<group>"; };
+		11DADD4B221C852E004B92A4 /* CastAndCrewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastAndCrewViewController.swift; sourceTree = "<group>"; };
+		11DADD4D221C9521004B92A4 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		11DADD4F221C96E5004B92A4 /* CastAndCrewPeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastAndCrewPeopleTableViewCell.swift; sourceTree = "<group>"; };
+		11DADD51221C9E87004B92A4 /* ViewSuspendable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSuspendable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +354,7 @@
 				11DADD43221C6E96004B92A4 /* MovieDetailDirectorTableViewCell.swift */,
 				11DADD45221C7D64004B92A4 /* MovieDetailTableHeaderView.swift */,
 				11DADD47221C7E11004B92A4 /* MovieDetailTableHeaderView.xib */,
+				11DADD4F221C96E5004B92A4 /* CastAndCrewPeopleTableViewCell.swift */,
 			);
 			name = Movie;
 			sourceTree = "<group>";
@@ -353,6 +364,7 @@
 			children = (
 				1198EAF9221B983A00A1C625 /* MovieListViewController.swift */,
 				113439BD221BC8280021EC18 /* MovieDetailViewController.swift */,
+				11DADD4B221C852E004B92A4 /* CastAndCrewViewController.swift */,
 			);
 			name = Movie;
 			sourceTree = "<group>";
@@ -362,6 +374,7 @@
 			children = (
 				1198EAF7221B979A00A1C625 /* MovieListViewModel.swift */,
 				113439C7221BCE2C0021EC18 /* MovieDetailViewModel.swift */,
+				11DADD49221C84F7004B92A4 /* CastAndCrewViewModel.swift */,
 			);
 			name = Movie;
 			sourceTree = "<group>";
@@ -462,6 +475,7 @@
 			isa = PBXGroup;
 			children = (
 				11488CE12218EE2000D07D69 /* NameDescribable.swift */,
+				11DADD51221C9E87004B92A4 /* ViewSuspendable.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -476,6 +490,7 @@
 				113439C1221BC9DD0021EC18 /* MovieDetail.swift */,
 				113439C3221BCA570021EC18 /* MovieGenre.swift */,
 				11DADD2C221C0CE4004B92A4 /* Configuration.swift */,
+				11DADD4D221C9521004B92A4 /* Person.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -781,6 +796,7 @@
 				1198EAFC221B98EF00A1C625 /* MovieListTableViewCell.swift in Sources */,
 				11488D61221B057900D07D69 /* APIState.swift in Sources */,
 				11488CD42218EB8B00D07D69 /* TabbarRouter.swift in Sources */,
+				11DADD4C221C852E004B92A4 /* CastAndCrewViewController.swift in Sources */,
 				11488D31221AFC6A00D07D69 /* AppCoordinator.swift in Sources */,
 				11488CD02218EB8B00D07D69 /* NavigationRouter.swift in Sources */,
 				11488D4C221B048400D07D69 /* DataRequest+Ext.swift in Sources */,
@@ -800,6 +816,7 @@
 				1198EAF6221B95EC00A1C625 /* MovieList.swift in Sources */,
 				11488D3D221AFE2300D07D69 /* CoordinatorProtocols.swift in Sources */,
 				113439E2221C00070021EC18 /* MovieType.swift in Sources */,
+				11DADD4E221C9521004B92A4 /* Person.swift in Sources */,
 				11488CD72218EBF200D07D69 /* AppDelegate+Config.swift in Sources */,
 				1198EAF8221B979A00A1C625 /* MovieListViewModel.swift in Sources */,
 				11488D37221AFD2500D07D69 /* AlertCoordinator.swift in Sources */,
@@ -810,16 +827,19 @@
 				11488D33221AFCD800D07D69 /* CoordinatorFactory.swift in Sources */,
 				113439C4221BCA570021EC18 /* MovieGenre.swift in Sources */,
 				11DADD46221C7D64004B92A4 /* MovieDetailTableHeaderView.swift in Sources */,
+				11DADD4A221C84F7004B92A4 /* CastAndCrewViewModel.swift in Sources */,
 				113439C0221BC8AD0021EC18 /* MovieDetailRepository.swift in Sources */,
 				113439C8221BCE2C0021EC18 /* MovieDetailViewModel.swift in Sources */,
 				11DADD2D221C0CE4004B92A4 /* Configuration.swift in Sources */,
 				11DADD40221C60DD004B92A4 /* MovieCreditsRepository.swift in Sources */,
 				11488CD22218EB8B00D07D69 /* Presentable.swift in Sources */,
 				113439CC221BDA850021EC18 /* MovieDetailBaseInfoTableViewCell.swift in Sources */,
+				11DADD52221C9E88004B92A4 /* ViewSuspendable.swift in Sources */,
 				11488D3F221AFECA00D07D69 /* AssetsImages.swift in Sources */,
 				1198EAFA221B983A00A1C625 /* MovieListViewController.swift in Sources */,
 				11DADD44221C6E96004B92A4 /* MovieDetailDirectorTableViewCell.swift in Sources */,
 				11DADD3E221C5D46004B92A4 /* MovieCredits.swift in Sources */,
+				11DADD50221C96E5004B92A4 /* CastAndCrewPeopleTableViewCell.swift in Sources */,
 				11488CDD2218ECBC00D07D69 /* Const.swift in Sources */,
 				11488D43221AFF1B00D07D69 /* Optional+Ext.swift in Sources */,
 				113439CA221BD6F30021EC18 /* MovieDetailBackdropTableViewCell.swift in Sources */,

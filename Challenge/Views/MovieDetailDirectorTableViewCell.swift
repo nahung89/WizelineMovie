@@ -37,7 +37,7 @@ class MovieDetailDirectorTableViewCell: UITableViewCell, Reusable {
         default:
             text = "Directors: \(directorNames[0].name) & \(directorNames.count - 1) more"
         }
-        
+
         return text
     }
 }

@@ -1,3 +1,11 @@
+[ ] -> Not start
+[=] -> Work a little
+[#] -> Finish
+
+
+#################################################
+
+
 [#] 1.1 Fetch the list of top rated movies
 [#] 1.2 Fetch the list of now playing movies
 [#] 1.3 Showing error screen in failure case
@@ -28,13 +36,13 @@
 [#] 2.8 Create a section called “Cast and Crews”
 [#]     + Display the name, character and image of the top 4 cast
 [#]     + Display the name of the director
-[ ] 2.9 User can tap on See all button to see the full list of cast and crews
-[ ]     + Required 2.8 (see wireframe in Cast & Crews Screen)
+[#] 2.9 User can tap on See all button to see the full list of cast and crews
+[#]     + Required 2.8 (see wireframe in Cast & Crews Screen)
 [#] 2.10 Some movies have more than one director. Please handle:
          + If there is one director, show: Director: Michael Bay
          + If there are 2 directors, show Directors: Michael Bay & Corin Hardy
          + If there are more than 2 directors, show Directors: Michael Bay & 3 more
-[=] 2.12 Good amount of coverage for unit test
+[ ] 2.12 Good amount of coverage for unit test
 
 
 ################################################
@@ -51,9 +59,9 @@ Our suggestions
 ################################################
 
 
-[ ] 4.1 Display the title of the movie and the release year as a header of the table view
-[ ] 4.2 Display the number of cast and crews as another header of the table view
-[ ] 4.3 Display
+[#] 4.1 Display the title of the movie and the release year as a header of the table view
+[#] 4.2 Display the number of cast and crews as another header of the table view
+[#] 4.3 Display
         + Image of the each person
         + Their name
         + Their characters (for cast) and role (for crew)
