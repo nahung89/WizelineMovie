@@ -49,7 +49,7 @@ class MovieListViewController: BaseViewController, MovieListViewType {
     }
 
     private func setupUI() {
-        navigationItem.title = L10n.mainTitle
+        navigationItem.title = L10n.wizemovie
         tableView.addSubview(refreshControl)
     }
 
@@ -111,7 +111,7 @@ extension MovieListViewController: UITableViewDataSource, UITableViewDelegate {
         guard
             let cell = tableView.cellForRow(at: indexPath) as? MovieListTableViewCell,
             let movie = cell.movie
-            else { return }
+        else { return }
 
         onMovieSelect?(movie)
     }

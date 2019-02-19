@@ -8,22 +8,11 @@
 
 import Foundation
 
-protocol MovieType {
-    var id: Int { get }
-    var title: String { get }
-    var voteAverage: Double { get }
-    var totalVotes: Double { get }
-    var posterPath: String? { get }
-    var backdropPath: String? { get }
-    var overview: String { get }
-    var releaseDate: Date { get }
-}
-
 struct Movie: MovieType, Decodable {
     let id: Int
     let title: String
     let voteAverage: Double
-    let totalVotes: Double
+    let totalVotes: Int
     let posterPath: String?
     let backdropPath: String?
     let overview: String

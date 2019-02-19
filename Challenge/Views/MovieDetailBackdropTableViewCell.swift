@@ -7,23 +7,19 @@
 //
 
 import Foundation
-import UIKit
 import Reusable
+import UIKit
 
 class MovieDetailBackdropTableViewCell: UITableViewCell, Reusable {
-
     @IBOutlet private var backdropImageView: UIImageView!
 
     var movie: MovieDetail? {
         didSet {
-            guard let backdropPath = movie?.backdropPath else {
+            guard let movie = movie else {
                 clear()
                 return
             }
-
-            #warning("[!] load backdrop")
-            backdropImageView.backgroundColor = UIColor.random()
-            logger?.debug(backdropPath)
+            backdropImageView.loadOrEmpty(movie.backdropPath, kind: .backdrop)
         }
     }
 

@@ -34,5 +34,4 @@ final class ControllerFactory {
 
         return controller
     }
-
 }

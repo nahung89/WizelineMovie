@@ -13,16 +13,12 @@ enum MovieAPI {
     case getTopRatedMovies(page: Int)
     case getNowPlayingMovies(page: Int)
     case getDetailMovie(id: Int)
-
-    private enum Const {
-        static let BaseURLPath = "https://api.themoviedb.org/3"
-        static let Key = "31b9e98ad4dcd29fa0cd622b3efc4d1b"
-    }
+    case getConfiguration
 }
 
 extension MovieAPI: APIEndpoint {
     var baseURLPath: String {
-        return Const.BaseURLPath
+        return APIConst.BaseURLPath
     }
 
     var path: String {
@@ -33,6 +29,8 @@ extension MovieAPI: APIEndpoint {
             return "/movie/now_playing"
         case let .getDetailMovie(id):
             return "/movie/\(id)"
+        case .getConfiguration:
+            return "/configuration"
         }
     }
 
@@ -40,13 +38,14 @@ extension MovieAPI: APIEndpoint {
         switch self {
         case .getTopRatedMovies,
              .getNowPlayingMovies,
-             .getDetailMovie:
+             .getDetailMovie,
+             .getConfiguration:
             return .get
         }
     }
 
     var parameters: Parameters? {
-        var params: Parameters = ["api_key": Const.Key]
+        var params: Parameters = ["api_key": APIConst.Key]
         switch self {
         case let .getNowPlayingMovies(page),
              let .getTopRatedMovies(page):
@@ -70,6 +69,8 @@ extension MovieAPI: APIEndpoint {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
             decoder.dateDecodingStrategy = .formatted(dateFormatter)
+        default:
+            break
         }
 
         return decoder

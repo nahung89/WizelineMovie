@@ -9,9 +9,21 @@
 import Foundation
 import UIKit
 
+enum APIConst {
+    static let BaseURLPath = "https://api.themoviedb.org/3"
+    static let Key = "31b9e98ad4dcd29fa0cd622b3efc4d1b"
+}
+
+enum ImageConst {
+    static let Setting = "configuration.json"
+    static let Scheme = "https://image.tmdb.org/t/p/original"
+    static let Size = "original"
+    static let UserDefaultKey = "ImageConfiguration"
+}
+
 enum LogConfig {
-    static let directoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("Logs", isDirectory: true)
-    static let fileUrl = directoryUrl.appendingPathComponent("\(UIDevice.current.name)-\(Date()).log")
-    static let sizesLimit = 1 * 1024 * 1024 // 1MB
-    static let filesLimit: Int = 50 // 50 files
+    static let DirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("Logs", isDirectory: true)
+    static let FileUrl = DirectoryUrl.appendingPathComponent("\(UIDevice.current.name)-\(Date()).log")
+    static let SizesLimit = 1 * 1024 * 1024 // 1MB
+    static let FilesLimit: Int = 50 // 50 files
 }

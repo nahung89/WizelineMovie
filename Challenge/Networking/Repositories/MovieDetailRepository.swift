@@ -18,7 +18,7 @@ class MovieDetailRepository {
     private let disposeBag = DisposeBag()
 
     init(movie: Movie) {
-        self.movieDetail = MovieDetail(movie: movie)
+        movieDetail = MovieDetail(movie: movie)
     }
 
     func fetch() {
