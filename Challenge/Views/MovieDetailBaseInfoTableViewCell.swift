@@ -6,13 +6,12 @@
 //  Copyright © 2019 Nah. All rights reserved.
 //
 
-import Foundation
-import UIKit
-import Reusable
 import DateHelper
+import Foundation
+import Reusable
+import UIKit
 
 class MovieDetailBaseInfoTableViewCell: UITableViewCell, Reusable {
-
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var contentLabel: UILabel!
 
@@ -26,7 +25,7 @@ class MovieDetailBaseInfoTableViewCell: UITableViewCell, Reusable {
             let formatter = DateComponentsFormatter()
             formatter.allowedUnits = [.hour, .minute]
 
-            var duration = "NaN"
+            var duration = ""
             if let time = movie.duration {
                 duration = "\(time)m"
             }
@@ -34,12 +33,12 @@ class MovieDetailBaseInfoTableViewCell: UITableViewCell, Reusable {
             let genres = movie.genres.map({ $0.name }).joined(separator: ", ")
 
             titleLabel.text = "\(movie.title) (\(movie.releaseDate.toString(format: .isoYear)))"
-            contentLabel.text = "★: \(movie.voteAverage)/10 | \(duration) | \(genres)"
+            contentLabel.text = ["★ \(movie.voteAverage)/10", duration, genres].filter({ !$0.isEmpty }).joined(separator: " | ")
         }
     }
 
     private func clear() {
-        titleLabel.text = "NaN"
-        contentLabel.text = "NaN"
+        titleLabel.text = ""
+        contentLabel.text = ""
     }
 }

@@ -13,7 +13,7 @@ struct MovieDetail: MovieType, Decodable {
     let title: String
     let duration: Int?
     let voteAverage: Double
-    let totalVotes: Double
+    let totalVotes: Int
     let posterPath: String?
     let backdropPath: String?
     let overview: String

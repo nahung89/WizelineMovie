@@ -13,9 +13,15 @@ import UIKit
 class MovieListTableViewCell: UITableViewCell, Reusable {
     @IBOutlet private var posterImageView: UIImageView!
     @IBOutlet private var titleLabel: UILabel!
-    @IBOutlet private var ratingLabel: UILabel!
-    @IBOutlet private var totalVoteLabel: UILabel!
     @IBOutlet private var releaseDateLabel: UILabel!
+    @IBOutlet private var ratingLabel: UILabel!
+    @IBOutlet private var summaryLabel: UILabel!
+    @IBOutlet private var posterWidthConstraint: NSLayoutConstraint!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        posterWidthConstraint.constant = UIScreen.main.bounds.width / 4
+    }
 
     var movie: Movie? {
         didSet {
@@ -24,11 +30,14 @@ class MovieListTableViewCell: UITableViewCell, Reusable {
                 return
             }
 
-            posterImageView.backgroundColor = UIColor.random()
+            posterImageView.loadOrEmpty(movie.posterPath, kind: .poster)
             titleLabel.text = movie.title
-            ratingLabel.text = String(format: "%.1f", movie.voteAverage)
-            totalVoteLabel.text = String(format: "%.0f votes", movie.totalVotes)
             releaseDateLabel.text = movie.releaseDate.toString(format: .isoYear)
+            summaryLabel.text = movie.overview
+
+            let voteAverage = String(format: "%.1f", movie.voteAverage)
+            let totalVotes = "\(movie.totalVotes) \(movie.totalVotes > 1 ? L10n.votes : L10n.vote)"
+            ratingLabel.text = "★ \(voteAverage) (\(totalVotes))"
         }
     }
 
@@ -36,7 +45,6 @@ class MovieListTableViewCell: UITableViewCell, Reusable {
         posterImageView.image = nil
         titleLabel.text = ""
         ratingLabel.text = ""
-        totalVoteLabel.text = ""
         releaseDateLabel.text = ""
     }
 }

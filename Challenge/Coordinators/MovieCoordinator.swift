@@ -16,6 +16,7 @@ class MovieCoordinator: Coordinator, CoordinatorErrorable {
     init(router: NavigationRouterType, type: MovieList.DataType) {
         self.type = type
         self.router = router
+        super.init()
     }
 
     override func start(_ option: DeepLinkOption?) {
@@ -26,7 +27,7 @@ class MovieCoordinator: Coordinator, CoordinatorErrorable {
         }
 
         controller.onMovieSelect = { [weak self] movie in
-            self?.goToDetailMovie(movie)
+            self?.openDetailMovie(movie)
         }
 
         router.toPresent().tabBarItem.title = makeBarTitle()
@@ -35,7 +36,7 @@ class MovieCoordinator: Coordinator, CoordinatorErrorable {
 }
 
 private extension MovieCoordinator {
-    func goToDetailMovie(_ movie: Movie) {
+    func openDetailMovie(_ movie: Movie) {
         let controller = ControllerFactory.makeDetailMoviePresentable(movie)
 
         controller.onErrorReceive = { [weak self] title, error in
@@ -47,8 +48,8 @@ private extension MovieCoordinator {
 
     func makeBarTitle() -> String {
         switch type {
-        case .nowPlaying: return L10n.nowPlayingBar
-        case .topRate: return L10n.topRateBar
+        case .nowPlaying: return L10n.nowPlaying
+        case .topRate: return L10n.topRated
         }
     }
 }

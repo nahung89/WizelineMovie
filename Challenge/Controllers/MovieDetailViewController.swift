@@ -46,7 +46,7 @@ class MovieDetailViewController: BaseViewController, MovieDetailViewType {
     }
 
     private func setupUI() {
-        navigationItem.title = L10n.mainTitle
+        navigationItem.title = L10n.wizemovie
         tableView.addSubview(refreshControl)
     }
 

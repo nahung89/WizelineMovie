@@ -2,10 +2,19 @@
 "ERROR" = "Error";
 
 /* Now Playing */
-"NOW_PLAYING_BAR" = "Now Playing";
+"NOW_PLAYING" = "Now Playing";
 
 /* Top Rated */
-"TOP_RATE_BAR" = "Top Rated";
+"TOP_RATED" = "Top Rated";
 
 /* WizeMovie */
-"MAIN_TITLE" = "WizeMovie";
+"WIZEMOVIE" = "WizeMovie";
+
+/* Done */
+"DONE" = "Done";
+
+/* vote */
+"VOTE" = "vote";
+
+/* votes */
+"VOTES" = "votes";

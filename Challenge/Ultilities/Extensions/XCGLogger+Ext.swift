@@ -12,7 +12,7 @@ import XCGLogger
 extension XCGLogger {
     static func customize() -> XCGLogger? {
         // Create log folder if need
-        try? FileManager.default.createDirectory(at: LogConfig.directoryUrl, withIntermediateDirectories: true, attributes: nil)
+        try? FileManager.default.createDirectory(at: LogConfig.DirectoryUrl, withIntermediateDirectories: true, attributes: nil)
 
         // Datetime
         let timeFormatter = DateFormatter()
@@ -29,7 +29,7 @@ extension XCGLogger {
         emojiLogFormatter.apply(prefix: "🆘", to: .severe)
 
         // Create a file log destination
-        let fileDestination = FileDestination(writeToFile: LogConfig.fileUrl.path, identifier: "advancedLogger.fileDestination")
+        let fileDestination = FileDestination(writeToFile: LogConfig.FileUrl.path, identifier: "advancedLogger.fileDestination")
         // Optionally set some configuration options
         fileDestination.outputLevel = .verbose
         fileDestination.showLogIdentifier = false
@@ -75,7 +75,7 @@ extension XCGLogger {
     }
 
     private func cleanUpCache() {
-        let fileURLs = validFileURLs(parentURL: LogConfig.directoryUrl)
+        let fileURLs = validFileURLs(parentURL: LogConfig.DirectoryUrl)
 
         let attributesList = fileURLs
             .compactMap({ url -> [AttributeKey: Any]? in
@@ -92,13 +92,13 @@ extension XCGLogger {
         for attr in attributesList {
             // Remove by size
             fileSize += attr[.size] as! Int
-            if fileSize > LogConfig.sizesLimit {
+            if fileSize > LogConfig.SizesLimit {
                 removeURLs.append(attr[.url] as! URL)
                 continue
             }
             // Remove by count
             fileCount += 1
-            if fileCount > LogConfig.filesLimit {
+            if fileCount > LogConfig.FilesLimit {
                 removeURLs.append(attr[.url] as! URL)
                 continue
             }

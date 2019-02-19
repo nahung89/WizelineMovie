@@ -7,11 +7,10 @@
 //
 
 import Foundation
-import UIKit
 import Reusable
+import UIKit
 
 class MovieDetailSumaryTableViewCell: UITableViewCell, Reusable {
-
     @IBOutlet private var summaryLabel: UILabel!
 
     var movie: MovieDetail? {
@@ -26,6 +25,6 @@ class MovieDetailSumaryTableViewCell: UITableViewCell, Reusable {
     }
 
     private func clear() {
-        summaryLabel.text = "NaN"
+        summaryLabel.text = ""
     }
 }
