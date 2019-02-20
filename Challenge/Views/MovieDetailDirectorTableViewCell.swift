@@ -20,7 +20,7 @@ class MovieDetailDirectorTableViewCell: UITableViewCell, Reusable {
     }
 
     var contentText: String {
-        let directorNames = crews.filter({ $0.job.lowercased() == "director" })
+        let directorNames = crews.filter({ $0.isDirector })
 
         let text: String
         switch directorNames.count {

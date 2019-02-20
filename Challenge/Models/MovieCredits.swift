@@ -43,5 +43,9 @@ extension MovieCredits {
             case id, name, job
             case profilePath = "profile_path"
         }
+
+        var isDirector: Bool {
+            return job.lowercased() == "director"
+        }
     }
 }

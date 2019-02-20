@@ -83,7 +83,7 @@ private extension MovieDetailViewModel {
         var newSections: [MovieDetailViewController.Section] = [.detail]
 
         // Only append if has cast or at least 1 director
-        if !movieCredits.casts.isEmpty || movieCredits.crews.contains(where: { $0.job.lowercased() == "director" }) {
+        if !movieCredits.casts.isEmpty || movieCredits.crews.contains(where: { $0.isDirector }) {
             newSections.append(.credits)
         }
 
@@ -102,7 +102,7 @@ private extension MovieDetailViewModel {
                 if !movieCredits.casts.isEmpty {
                     rows.append(.casts)
                 }
-                if movieCredits.crews.contains(where: { $0.job.lowercased() == "director" }) {
+                if movieCredits.crews.contains(where: { $0.isDirector }) {
                     rows.append(.director)
                 }
             }
