@@ -8,19 +8,6 @@
 
 import Foundation
 
-protocol CoordinatorType: AnyObject {
-    var finishCallback: ((CoordinatorType) -> Void)? { get set }
-
-    func start(_ option: DeepLinkOption?)
-    func handle(_ option: DeepLinkOption) -> Bool
-}
-
-extension CoordinatorType {
-    func start(_ option: DeepLinkOption? = nil) {
-        start(option)
-    }
-}
-
 class Coordinator: NSObject, CoordinatorType {
     private(set) var childCoordinators: [CoordinatorType] = []
 
@@ -28,19 +15,19 @@ class Coordinator: NSObject, CoordinatorType {
 
     override init() {
         super.init()
-        logger?.verbose(typeName)
+        logger?.severe(typeName)
     }
 
     deinit {
-        logger?.verbose(typeName)
+        logger?.severe(typeName)
     }
 
     func start(_ option: DeepLinkOption?) {
-        assertionFailure("Function should be overrided.")
+        assertionFailure("Function need to be overrided.")
     }
 
     func handle(_ option: DeepLinkOption) -> Bool {
-        assertionFailure("Function should be overrided.")
+        assertionFailure("Function need to be overrided.")
         return false
     }
 
@@ -53,13 +40,10 @@ class Coordinator: NSObject, CoordinatorType {
         guard
             !childCoordinators.isEmpty,
             childCoordinators.contains(where: { $0 === coordinator })
-        else { return }
+            else { return }
 
         // Clear child-coordinators recursively
-        if let coordinator = coordinator as? Coordinator {
-            coordinator.removeAllDependencies()
-        }
-
+        coordinator.removeAllDependencies()
         childCoordinators.removeAll(where: { $0 === coordinator })
     }
 

@@ -12,7 +12,8 @@ import RxSwift
 import UIKit
 
 protocol MovieDetailViewType: ErrorActionable, SettingActionable {
-    var onCastCrewSelect: ((_ detail: MovieDetail, _ credits: MovieCredits) -> Void)? { get set }
+    var onAllCastCrewSelect: ((_ detail: MovieDetail, _ credits: MovieCredits) -> Void)? { get set }
+    var onDetailCastSelect: ((_ cast: MovieCredits.Cast) -> Void)? { get set }
 }
 
 typealias MovieDetailViewControllerDependency = MovieDetailViewController.Dependency
@@ -34,7 +35,8 @@ extension MovieDetailViewController {
 
 class MovieDetailViewController: BaseViewController, MovieDetailViewType {
     var onErrorReceive: ((_ title: String?, _ error: Error) -> Void)?
-    var onCastCrewSelect: ((_ detail: MovieDetail, _ credits: MovieCredits) -> Void)?
+    var onAllCastCrewSelect: ((_ detail: MovieDetail, _ credits: MovieCredits) -> Void)?
+    var onDetailCastSelect: ((_ cast: MovieCredits.Cast) -> Void)?
     var onSettingSelect: (() -> Void)?
 
     @IBOutlet private var tableView: UITableView!
@@ -100,7 +102,7 @@ class MovieDetailViewController: BaseViewController, MovieDetailViewType {
     }
 }
 
-extension MovieDetailViewController: UITableViewDataSource, UITableViewDelegate {
+extension MovieDetailViewController: UITableViewDataSource, UITableViewDelegate, MovieDetailCastTableViewCellDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.sections.count
     }
@@ -120,7 +122,7 @@ extension MovieDetailViewController: UITableViewDataSource, UITableViewDelegate 
             let headerView = tableView.dequeueReusableHeaderFooterView(MovieDetailTableHeaderView.self)
             headerView?.onSeeAllButtonSelect = { [weak self] in
                 guard let self = self else { return }
-                self.onCastCrewSelect?(self.viewModel.movieDetail, self.viewModel.movieCredits)
+                self.onAllCastCrewSelect?(self.viewModel.movieDetail, self.viewModel.movieCredits)
             }
             return headerView
 
@@ -164,6 +166,7 @@ extension MovieDetailViewController: UITableViewDataSource, UITableViewDelegate 
         case .casts:
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MovieDetailCastTableViewCell.self)
             cell.casts = viewModel.movieCredits.casts
+            cell.delegate = self
             return cell
 
         case .director:
@@ -175,5 +178,9 @@ extension MovieDetailViewController: UITableViewDataSource, UITableViewDelegate 
 
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         (cell as? ViewSuspendable)?.suspend()
+    }
+
+    func movieDetailCastTableViewCell(_ cell: MovieDetailCastTableViewCell, didSelect cast: MovieCredits.Cast) {
+        onDetailCastSelect?(cast)
     }
 }

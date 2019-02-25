@@ -28,7 +28,7 @@ class CastAndCrewPeopleTableViewCell: UITableViewCell, Reusable, ViewSuspendable
                 return
             }
 
-            profileImageView.loadOrEmpty(person.profilePath, kind: .profile)
+            profileImageView.loadOrEmpty(person.profilePath, kind: .profile, placeholder: Asset.profilePlaceholder.image)
             nameLabel.text = person.name
             titleLabel.text = person.title
         }

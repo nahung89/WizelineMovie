@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class MovieCoordinator: Coordinator, CoordinatorErrorable {
     let type: MovieList.DataType
@@ -34,7 +35,7 @@ class MovieCoordinator: Coordinator, CoordinatorErrorable {
             self?.openSetting()
         }
 
-        router.toPresent().tabBarItem.title = makeBarTitle()
+        router.toPresent().tabBarItem = makeBarTitle()
         router.setRootModule(controller, animated: false)
     }
 }
@@ -47,8 +48,12 @@ private extension MovieCoordinator {
             self?.openAlert(title: title, error: error)
         }
 
-        controller.onCastCrewSelect = { [weak self] detail, credits in
+        controller.onAllCastCrewSelect = { [weak self] detail, credits in
             self?.openCastCrew(detail, credits: credits)
+        }
+
+        controller.onDetailCastSelect = { [weak self] cast in
+            self?.openCast(cast)
         }
 
         controller.onSettingSelect = { [weak self] in
@@ -60,6 +65,16 @@ private extension MovieCoordinator {
 
     func openCastCrew(_ detail: MovieDetail, credits: MovieCredits) {
         let controller = ControllerFactory.makeCastAndCrewPresentable(detail: detail, credits: credits)
+
+        controller.onSettingSelect = { [weak self] in
+            self?.openSetting()
+        }
+
+        router.push(controller, animated: true, hideBottomBar: true)
+    }
+
+    func openCast(_ cast: MovieCredits.Cast) {
+        let controller = ControllerFactory.makeDetailCastPresentable(cast: cast)
         router.push(controller, animated: true, hideBottomBar: true)
     }
 
@@ -75,10 +90,14 @@ private extension MovieCoordinator {
         coordinator.start()
     }
 
-    func makeBarTitle() -> String {
+    func makeBarTitle() -> UITabBarItem {
+        let item: UITabBarItem
         switch type {
-        case .nowPlaying: return L10n.nowPlaying
-        case .topRate: return L10n.topRated
+        case .nowPlaying:
+            item = UITabBarItem(title: L10n.nowPlaying, image: Asset.nowPlaying.image, tag: 0)
+        case .topRate:
+            item = UITabBarItem(title: L10n.topRated, image: Asset.topRate.image, tag: 1)
         }
+        return item
     }
 }
