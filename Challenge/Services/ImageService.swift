@@ -81,13 +81,15 @@ private extension ImageService {
 }
 
 extension UIImageView {
-    func loadOrEmpty(_ path: String?, kind: ImageService.Kind) {
+    func loadOrEmpty(_ path: String?, kind: ImageService.Kind, placeholder: UIImage? = nil) {
+        let holderImage = placeholder ?? Asset.placeholder.image
+
         guard let path = path else {
-            image = Asset.placeholder.image
+            image = holderImage
             return
         }
 
         let url = ImageService.shared.combine(path, kind: kind, size: bounds.size)
-        kf.setImage(with: url, placeholder: Asset.placeholder.image)
+        kf.setImage(with: url, placeholder: holderImage)
     }
 }
