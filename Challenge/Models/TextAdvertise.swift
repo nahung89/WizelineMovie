@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Advertise {
-    let name: String
+struct TextAdvertise: TextAdvertiseType {
+    var name: String
 }

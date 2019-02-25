@@ -63,10 +63,27 @@ class MovieListViewModel {
             adIndex = newFeeds.count - 1 - adIndex
         }
 
+        let url = Bundle.main.url(forResource: "AdPlaceholder.png", withExtension: nil)!
+
         for i in stride(from: 0, to: movies.count, by: 1) {
             if adIndex + i > 0, (adIndex + i) % 3 == 0 {
-                let advertise = Advertise(name: "WIZELINE ADVERTISEMENT")
-                newFeeds.append(.ad(advertise))
+                switch Int.random(in: 0..<4) {
+                case 0:
+                    let advertise = TextAdvertise(name: "WIZELINE ADVERTISEMENT")
+                    newFeeds.append(.textAd(advertise))
+
+                case 1:
+                    let advertise = ImageAdvertise(url: url)
+                    newFeeds.append(.imageAd(advertise))
+
+                case 2:
+                    let advertise = ImageTextAdvertise(name: "WIZELINE ADVERTISEMENT", url: url)
+                    newFeeds.append(.imageTextAd(advertise))
+
+                default:
+                    let advertise = VideoAdvertise(url: url)
+                    newFeeds.append(.videoAd(advertise))
+                }
             }
             newFeeds.append(.movie(movies[i]))
         }
