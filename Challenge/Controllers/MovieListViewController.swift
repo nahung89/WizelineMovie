@@ -53,6 +53,10 @@ class MovieListViewController: BaseViewController, MovieListViewType {
         navigationItem.title = L10n.wizemovie
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: L10n.setting, style: .plain, target: nil, action: nil)
         tableView.addSubview(refreshControl)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Ad_1")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Ad_2")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Ad_3")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Ad_4")
     }
 
     private func setupBinding() {
@@ -101,26 +105,56 @@ class MovieListViewController: BaseViewController, MovieListViewType {
 
 extension MovieListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.movies.count
+        return viewModel.feeds.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MovieListTableViewCell.self)
+        guard let feed = viewModel.feeds.get(at: indexPath.row) else { return UITableViewCell() }
 
-        guard let movie = viewModel.movies.get(at: indexPath.row) else { return cell }
-        cell.movie = movie
-        return cell
+        switch feed {
+        case let .textAd(advertise):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Ad_1", for: indexPath)
+            cell.textLabel?.text = advertise.name
+            cell.backgroundColor = UIColor.yellow
+            return cell
+
+        case let .imageTextAd(advertise):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Ad_2", for: indexPath)
+            cell.textLabel?.text = advertise.name
+            cell.imageView?.image = UIImage(contentsOfFile: advertise.url.absoluteString)
+            cell.backgroundColor = UIColor.red
+            return cell
+
+        case let .imageAd(advertise):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Ad_3", for: indexPath)
+            cell.imageView?.image = UIImage(contentsOfFile: advertise.url.absoluteString)
+            cell.backgroundColor = UIColor.blue
+            return cell
+
+        case .videoAd:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Ad_4", for: indexPath)
+            cell.textLabel?.text = "VIDEO AD"
+            cell.backgroundColor = UIColor.green
+            return cell
+
+        case let .movie(movie):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MovieListTableViewCell.self)
+            cell.movie = movie
+            return cell
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer { tableView.deselectRow(at: indexPath, animated: true) }
 
-        guard
-            let cell = tableView.cellForRow(at: indexPath) as? MovieListTableViewCell,
-            let movie = cell.movie
-        else { return }
+        guard let feed = viewModel.feeds.get(at: indexPath.row) else { return }
 
-        onMovieSelect?(movie)
+        switch feed {
+        case let .movie(movie):
+            onMovieSelect?(movie)
+        default:
+            break
+        }
     }
 
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {

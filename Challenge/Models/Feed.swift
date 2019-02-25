@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+enum Feed {
+    case movie(Movie)
+    case textAd(TextAdvertise)
+    case imageAd(ImageAdvertise)
+    case imageTextAd(ImageTextAdvertise)
+    case videoAd(VideoAdvertise)
+
+    var isAd: Bool {
+        switch self {
+        case .textAd, .imageAd, .imageTextAd, .videoAd:
+            return true
+        case .movie:
+            return false
+        }
+    }
+}

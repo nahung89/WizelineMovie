@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct TextAdvertise: TextAdvertiseType {
+    var name: String
+}
