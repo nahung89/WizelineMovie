@@ -10,11 +10,21 @@ import Foundation
 import Reusable
 import UIKit
 
+protocol MovieDetailCastTableViewCellDelegate: AnyObject {
+    func movieDetailCastTableViewCell(_ cell: MovieDetailCastTableViewCell, didSelect cast: MovieCredits.Cast)
+}
+
+extension MovieDetailCastTableViewCellDelegate {
+    func movieDetailCastTableViewCell(_ cell: MovieDetailCastTableViewCell, didSelect cast: MovieCredits.Cast) {}
+}
+
 class MovieDetailCastTableViewCell: UITableViewCell, Reusable, ViewSuspendable {
     @IBOutlet private var castItemA: MovieDetailCastTableViewCellCastItem!
     @IBOutlet private var castItemB: MovieDetailCastTableViewCellCastItem!
     @IBOutlet private var castItemC: MovieDetailCastTableViewCellCastItem!
     @IBOutlet private var castItemD: MovieDetailCastTableViewCellCastItem!
+
+    weak var delegate: MovieDetailCastTableViewCellDelegate?
 
     var casts: [MovieCredits.Cast] = [] {
         didSet {
@@ -26,6 +36,7 @@ class MovieDetailCastTableViewCell: UITableViewCell, Reusable, ViewSuspendable {
             }
 
             for i in stride(from: minn, to: 4, by: 1) {
+                views[i]?.cast = nil
                 views[i]?.clear()
             }
         }
@@ -34,9 +45,14 @@ class MovieDetailCastTableViewCell: UITableViewCell, Reusable, ViewSuspendable {
     func suspend() {
         [castItemA, castItemB, castItemC, castItemD].forEach({ $0?.suspend() })
     }
+
+    @IBAction private func onItemTouch(_ sender: MovieDetailCastTableViewCellCastItem) {
+        guard let cast = sender.cast else { return }
+        delegate?.movieDetailCastTableViewCell(self, didSelect: cast)
+    }
 }
 
-class MovieDetailCastTableViewCellCastItem: UIView, ViewSuspendable {
+class MovieDetailCastTableViewCellCastItem: UIButton, ViewSuspendable {
     @IBOutlet private var profileImageView: UIImageView!
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var characterLabel: UILabel!

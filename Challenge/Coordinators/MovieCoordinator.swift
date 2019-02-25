@@ -47,8 +47,12 @@ private extension MovieCoordinator {
             self?.openAlert(title: title, error: error)
         }
 
-        controller.onCastCrewSelect = { [weak self] detail, credits in
+        controller.onAllCastCrewSelect = { [weak self] detail, credits in
             self?.openCastCrew(detail, credits: credits)
+        }
+
+        controller.onDetailCastSelect = { [weak self] cast in
+            self?.openCast(cast)
         }
 
         controller.onSettingSelect = { [weak self] in
@@ -60,6 +64,13 @@ private extension MovieCoordinator {
 
     func openCastCrew(_ detail: MovieDetail, credits: MovieCredits) {
         let controller = ControllerFactory.makeCastAndCrewPresentable(detail: detail, credits: credits)
+        router.push(controller, animated: true, hideBottomBar: true)
+    }
+
+    func openCast(_ cast: MovieCredits.Cast) {
+        let controller = ControllerFactory.makeDetailCastPresentable(cast: cast)
+        #warning("Need to improve: use dependency")
+        controller.toPresent().navigationItem.title = cast.name
         router.push(controller, animated: true, hideBottomBar: true)
     }
 

@@ -48,6 +48,11 @@ final class ControllerFactory {
         return controller
     }
 
+    static func makeDetailCastPresentable(cast: MovieCredits.Cast) -> DetailCastViewType {
+        let controller = StoryboardScene.Movie.detailCastViewController.instantiate()
+        return controller
+    }
+
     static func makeSettingPresentable() -> SettingViewType {
         let viewModel = SettingViewModel()
 

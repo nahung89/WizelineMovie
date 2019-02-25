@@ -274,6 +274,7 @@
                                                                 <constraint firstItem="jaj-C4-RkI" firstAttribute="top" secondItem="ahc-u2-mft" secondAttribute="bottom" constant="3" id="xaU-iV-U8v"/>
                                                             </constraints>
                                                             <connections>
+                                                                <action selector="onItemTouch:" destination="z53-Tz-TKn" eventType="touchUpInside" id="CFg-ca-s3J"/>
                                                                 <outlet property="characterLabel" destination="jaj-C4-RkI" id="EPe-NR-ecB"/>
                                                                 <outlet property="nameLabel" destination="ahc-u2-mft" id="f1K-o3-Z7m"/>
                                                                 <outlet property="profileImageView" destination="kzq-sb-p0M" id="c4S-EZ-Ut4"/>
@@ -315,6 +316,7 @@
                                                                 <constraint firstItem="nq1-0v-hec" firstAttribute="top" secondItem="2BQ-ex-87z" secondAttribute="top" id="yAv-pi-kPq"/>
                                                             </constraints>
                                                             <connections>
+                                                                <action selector="onItemTouch:" destination="z53-Tz-TKn" eventType="touchUpInside" id="ejl-Wh-PB0"/>
                                                                 <outlet property="characterLabel" destination="nnf-Iy-aqz" id="aHL-Wq-Xhr"/>
                                                                 <outlet property="nameLabel" destination="kcR-P7-FEv" id="j6W-cm-U6R"/>
                                                                 <outlet property="profileImageView" destination="nq1-0v-hec" id="4B1-Bi-8XH"/>
@@ -356,6 +358,7 @@
                                                                 <constraint firstItem="Jqg-6p-loO" firstAttribute="leading" secondItem="MaP-wh-ktm" secondAttribute="leading" constant="3" id="kK9-AN-IIE"/>
                                                             </constraints>
                                                             <connections>
+                                                                <action selector="onItemTouch:" destination="z53-Tz-TKn" eventType="touchUpInside" id="d3L-LL-C8x"/>
                                                                 <outlet property="characterLabel" destination="Jqg-6p-loO" id="uxd-8M-fSH"/>
                                                                 <outlet property="nameLabel" destination="I8K-aj-mcR" id="bTX-P6-YHA"/>
                                                                 <outlet property="profileImageView" destination="wX0-Aq-tbK" id="5tV-Hb-Oax"/>
@@ -397,6 +400,7 @@
                                                                 <constraint firstItem="Hun-tQ-IUP" firstAttribute="leading" secondItem="TNm-Oj-OzI" secondAttribute="leading" constant="3" id="vFv-DV-02z"/>
                                                             </constraints>
                                                             <connections>
+                                                                <action selector="onItemTouch:" destination="z53-Tz-TKn" eventType="touchUpInside" id="iKZ-zB-yr8"/>
                                                                 <outlet property="characterLabel" destination="buW-qt-JaI" id="pHR-me-0KE"/>
                                                                 <outlet property="nameLabel" destination="Hun-tQ-IUP" id="HtO-IV-LYL"/>
                                                                 <outlet property="profileImageView" destination="iTV-Ay-Tdo" id="2BD-vN-jbu"/>
@@ -573,6 +577,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ga-VD-cTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1864.8" y="-141.67916041979012"/>
+        </scene>
+        <!--Detail Cast View Controller-->
+        <scene sceneID="cq2-nI-93Y">
+            <objects>
+                <viewController storyboardIdentifier="DetailCastViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4qA-l8-zKq" customClass="DetailCastViewController" customModule="Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gZs-TF-UU2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="KB4-iw-zYm"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jk8-Ou-Zed" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1863" y="541"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kCl-HD-jM6">
