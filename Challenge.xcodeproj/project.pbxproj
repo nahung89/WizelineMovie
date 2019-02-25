@@ -61,6 +61,7 @@
 		11488D61221B057900D07D69 /* APIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D5C221B057900D07D69 /* APIState.swift */; };
 		11488D62221B057900D07D69 /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D5D221B057900D07D69 /* MovieAPI.swift */; };
 		11488D63221B057900D07D69 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488D5E221B057900D07D69 /* APIEndpoint.swift */; };
+		118001FE2223A75800B67110 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118001FD2223A75800B67110 /* CoordinatorType.swift */; };
 		1198EAF2221B93AF00A1C625 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1198EAF1221B93AF00A1C625 /* Movie.swift */; };
 		1198EAF4221B95C700A1C625 /* MovieListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1198EAF3221B95C700A1C625 /* MovieListRepository.swift */; };
 		1198EAF6221B95EC00A1C625 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1198EAF5221B95EC00A1C625 /* MovieList.swift */; };
@@ -170,6 +171,7 @@
 		11488D5C221B057900D07D69 /* APIState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIState.swift; sourceTree = "<group>"; };
 		11488D5D221B057900D07D69 /* MovieAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
 		11488D5E221B057900D07D69 /* APIEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		118001FD2223A75800B67110 /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		1198EAF1221B93AF00A1C625 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		1198EAF3221B95C700A1C625 /* MovieListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListRepository.swift; sourceTree = "<group>"; };
 		1198EAF5221B95EC00A1C625 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 		11488CC92218EB8B00D07D69 /* CoordinatorKit */ = {
 			isa = PBXGroup;
 			children = (
+				118001FD2223A75800B67110 /* CoordinatorType.swift */,
 				11488CCF2218EB8B00D07D69 /* Coordinator.swift */,
 				11488CCD2218EB8B00D07D69 /* Router.swift */,
 				11488CCA2218EB8B00D07D69 /* NavigationRouter.swift */,
@@ -836,6 +839,7 @@
 				11488CD32218EB8B00D07D69 /* Router.swift in Sources */,
 				11488D45221AFF5A00D07D69 /* UIColor+Ext.swift in Sources */,
 				11488D39221AFD5200D07D69 /* ControllerFactory.swift in Sources */,
+				118001FE2223A75800B67110 /* CoordinatorType.swift in Sources */,
 				11488D49221B019A00D07D69 /* Strings.swift in Sources */,
 				11488CD12218EB8B00D07D69 /* DeepLinkOption.swift in Sources */,
 				11488CDB2218EC4F00D07D69 /* XCGLogger+Ext.swift in Sources */,
