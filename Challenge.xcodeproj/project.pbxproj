@@ -32,7 +32,6 @@
 		113439E2221C00070021EC18 /* MovieType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113439E1221C00070021EC18 /* MovieType.swift */; };
 		11488CBA22188AC900D07D69 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11488CB822188AC900D07D69 /* Localizable.strings */; };
 		11488CD02218EB8B00D07D69 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488CCA2218EB8B00D07D69 /* NavigationRouter.swift */; };
-		11488CD12218EB8B00D07D69 /* DeepLinkOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488CCB2218EB8B00D07D69 /* DeepLinkOption.swift */; };
 		11488CD22218EB8B00D07D69 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488CCC2218EB8B00D07D69 /* Presentable.swift */; };
 		11488CD32218EB8B00D07D69 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488CCD2218EB8B00D07D69 /* Router.swift */; };
 		11488CD42218EB8B00D07D69 /* TabbarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11488CCE2218EB8B00D07D69 /* TabbarRouter.swift */; };
@@ -143,7 +142,6 @@
 		113439E1221C00070021EC18 /* MovieType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieType.swift; sourceTree = "<group>"; };
 		11488CB922188AC900D07D69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		11488CCA2218EB8B00D07D69 /* NavigationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
-		11488CCB2218EB8B00D07D69 /* DeepLinkOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkOption.swift; sourceTree = "<group>"; };
 		11488CCC2218EB8B00D07D69 /* Presentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
 		11488CCD2218EB8B00D07D69 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		11488CCE2218EB8B00D07D69 /* TabbarRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarRouter.swift; sourceTree = "<group>"; };
@@ -461,7 +459,6 @@
 				11488CCA2218EB8B00D07D69 /* NavigationRouter.swift */,
 				11488CCE2218EB8B00D07D69 /* TabbarRouter.swift */,
 				11488CCC2218EB8B00D07D69 /* Presentable.swift */,
-				11488CCB2218EB8B00D07D69 /* DeepLinkOption.swift */,
 			);
 			path = CoordinatorKit;
 			sourceTree = "<group>";
@@ -844,7 +841,6 @@
 				11488D39221AFD5200D07D69 /* ControllerFactory.swift in Sources */,
 				118001FE2223A75800B67110 /* CoordinatorType.swift in Sources */,
 				11488D49221B019A00D07D69 /* Strings.swift in Sources */,
-				11488CD12218EB8B00D07D69 /* DeepLinkOption.swift in Sources */,
 				11488CDB2218EC4F00D07D69 /* XCGLogger+Ext.swift in Sources */,
 				11488D63221B057900D07D69 /* APIEndpoint.swift in Sources */,
 				113439C2221BC9DD0021EC18 /* MovieDetail.swift in Sources */,

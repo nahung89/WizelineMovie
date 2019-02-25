@@ -20,7 +20,7 @@ final class AlertCoordinator: Coordinator {
         super.init()
     }
 
-    override func start(_ option: DeepLinkOption?) {
+    override func start() {
         let action = UIAlertAction(title: "OK", style: .cancel) { [weak self] _ in
             self?.finish(animated: true)
         }
@@ -36,11 +36,6 @@ final class AlertCoordinator: Coordinator {
         window.makeKeyAndVisible()
 
         rootController.present(alertController, animated: true)
-    }
-
-    override func handle(_ option: DeepLinkOption) -> Bool {
-        finish(animated: false)
-        return true
     }
 
     private func finish(animated: Bool) {

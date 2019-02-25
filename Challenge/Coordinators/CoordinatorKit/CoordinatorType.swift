@@ -13,16 +13,9 @@ protocol CoordinatorType: AnyObject {
 
     var finishCallback: ((CoordinatorType) -> Void)? { get set }
 
-    func start(_ option: DeepLinkOption?)
-    func handle(_ option: DeepLinkOption) -> Bool
+    func start()
 
     func addDependency(_ coordinator: CoordinatorType)
     func removeDependency(_ coordinator: CoordinatorType)
     func removeAllDependencies()
-}
-
-extension CoordinatorType {
-    func start(_ option: DeepLinkOption? = nil) {
-        start(option)
-    }
 }

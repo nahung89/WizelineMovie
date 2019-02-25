@@ -19,7 +19,7 @@ final class AppCoordinator: Coordinator, CoordinatorErrorable {
         super.init()
     }
 
-    override func start(_ option: DeepLinkOption?) {
+    override func start() {
         let (coordinator, presentable) = CoordinatorFactory.makeMainCoordinator()
 
         coordinator.finishCallback = { [unowned self] caller in
