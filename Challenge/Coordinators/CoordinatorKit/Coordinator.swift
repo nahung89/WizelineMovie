@@ -15,11 +15,11 @@ class Coordinator: NSObject, CoordinatorType {
 
     override init() {
         super.init()
-        logger?.severe(typeName)
+        logger?.verbose(typeName)
     }
 
     deinit {
-        logger?.severe(typeName)
+        logger?.verbose(typeName)
     }
 
     func start() {
