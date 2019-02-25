@@ -75,8 +75,6 @@ private extension MovieCoordinator {
 
     func openCast(_ cast: MovieCredits.Cast) {
         let controller = ControllerFactory.makeDetailCastPresentable(cast: cast)
-        #warning("Need to improve: use dependency")
-        controller.toPresent().navigationItem.title = cast.name
         router.push(controller, animated: true, hideBottomBar: true)
     }
 

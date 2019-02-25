@@ -50,6 +50,7 @@ final class ControllerFactory {
 
     static func makeDetailCastPresentable(cast: MovieCredits.Cast) -> DetailCastViewType {
         let controller = StoryboardScene.Movie.detailCastViewController.instantiate()
+        controller.inject(cast)
         return controller
     }
 
