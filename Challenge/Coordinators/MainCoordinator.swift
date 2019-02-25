@@ -17,7 +17,7 @@ class MainCoordinator: Coordinator {
         super.init()
     }
 
-    override func start(_ option: DeepLinkOption?) {
+    override func start() {
         let factory = CoordinatorFactory.self
         let instances = [factory.makeNowPlayingMoviesCoordinator(),
                          factory.makeTopRateMoviesCoordinator()]

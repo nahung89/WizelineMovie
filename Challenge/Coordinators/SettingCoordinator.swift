@@ -16,7 +16,7 @@ class SettingCoordinator: Coordinator, CoordinatorErrorable {
         super.init()
     }
 
-    override func start(_ option: DeepLinkOption?) {
+    override func start() {
         let controller = ControllerFactory.makeSettingPresentable()
 
         controller.onErrorReceive = { [weak self] title, error in

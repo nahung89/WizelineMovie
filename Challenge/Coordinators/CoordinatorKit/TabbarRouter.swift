@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol TabbarRouterType: RouterType {
+protocol TabbarRouterType {
     func toPresent() -> UITabBarController
 
     func selectModule(at index: Int)

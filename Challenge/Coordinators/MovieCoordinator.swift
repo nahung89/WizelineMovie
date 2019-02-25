@@ -20,7 +20,7 @@ class MovieCoordinator: Coordinator, CoordinatorErrorable {
         super.init()
     }
 
-    override func start(_ option: DeepLinkOption?) {
+    override func start() {
         let controller = ControllerFactory.makeListMoviePresentable(type)
 
         controller.onErrorReceive = { [weak self] title, error in

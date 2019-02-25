@@ -22,13 +22,8 @@ class Coordinator: NSObject, CoordinatorType {
         logger?.severe(typeName)
     }
 
-    func start(_ option: DeepLinkOption?) {
+    func start() {
         assertionFailure("Function need to be overrided.")
-    }
-
-    func handle(_ option: DeepLinkOption) -> Bool {
-        assertionFailure("Function need to be overrided.")
-        return false
     }
 
     func addDependency(_ coordinator: CoordinatorType) {
