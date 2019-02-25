@@ -36,6 +36,7 @@ class CastAndCrewViewController: BaseViewController, CastAndCrewViewType {
         super.viewDidLoad()
 
         setupUI()
+        setupBinding()
         setupData()
     }
 
@@ -57,14 +58,12 @@ class CastAndCrewViewController: BaseViewController, CastAndCrewViewType {
     }
 
     private func setupUI() {
-        navigationItem.title = L10n.wizemovie
+        navigationItem.title = L10n.castAndCrews
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: L10n.setting, style: .plain, target: nil, action: nil)
     }
 
     private func setupData() {
         guard viewModel != nil else { fatalError("viewModel non-existed") }
-
-        navigationItem.title = L10n.castAndCrews
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: L10n.setting, style: .plain, target: nil, action: nil)
         movieTitleLabel.text = "\(viewModel.detail.title) (\(viewModel.detail.releaseDate.toString(format: .isoYear)))"
         totalPeopleLabel.text = "\(viewModel.people.count) people"
         tableView.reloadData()
