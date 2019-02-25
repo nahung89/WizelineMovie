@@ -16,7 +16,7 @@ enum APIConst {
 
 enum ImageConst {
     static let Setting = "configuration.json"
-    static let Scheme = "https://image.tmdb.org/t/p/original"
+    static let Scheme = "https://image.tmdb.org/t/p"
     static let Size = "original"
     static let UserDefaultKey = "ImageConfiguration"
 }
