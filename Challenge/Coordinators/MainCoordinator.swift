@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class MainCoordinator: Coordinator {
     private let router: TabbarRouterType
@@ -23,6 +24,10 @@ class MainCoordinator: Coordinator {
 
         // Assign `viewControllers` will make `viewDidLoad` run automatically
         router.setModules(instances.map({ $0.presentable }), animated: false)
+
+        #warning("Need to move to Controller ")
+        instances[0].presentable.toPresent().tabBarItem = UITabBarItem.init(tabBarSystemItem: .bookmarks, tag: 0)
+        instances[1].presentable.toPresent().tabBarItem = UITabBarItem.init(tabBarSystemItem: .featured, tag: 0)
 
         // Only start each coordinator after its presentable is in `tabBarController`
         for coordinator in instances.map({ $0.coordinator }) {
